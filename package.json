@@ -12,6 +12,7 @@
     "@emotion/styled": "^10.0.10",
     "@mapbox/rehype-prism": "^0.3.1",
     "@rebass/emotion": "^3.1.0",
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-mdx": "^1.2.0",
     "babel-plugin-macros": "^2.5.0",
     "babel-plugin-preval": "^3.0.1",
@@ -19,6 +20,7 @@
     "emotion-theming": "^10.0.10",
     "gatsby-remark-prismjs": "^3.2.6",
     "hast-util-to-string": "^1.0.1",
+    "micro": "^9.3.3",
     "mime": "^2.4.0",
     "next": "^8.0.3",
     "prism-themes": "^1.0.1",
@@ -27,9 +29,11 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "refractor": "^2.6.2",
+    "rss": "^1.2.2",
     "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^4.2.0",
     "dedent": "^0.7.0",
     "hast-util-to-html": "^5.0.0",
     "jest": "^24.5.0",

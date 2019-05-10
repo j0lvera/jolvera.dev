@@ -1,0 +1,17 @@
+import BlogPost from "../components/layouts/blog-post";
+import Page from "../components/layouts/page";
+
+export const meta = {
+  title: "My Projects",
+  summary: "List of projects I'm currently working on."
+};
+
+export default ({ children, url }) => (
+  <Page path={url.pathname} meta={meta}>
+    {children}
+  </Page>
+);
+
+This is a list of projects I'm currently workign on.
+
+- [Pa11y](https://pa11y.now.sh)

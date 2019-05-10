@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "nextjs-blog-starter",
-  "alias": "nextjs-blog-starter.now.sh",
+  "name": "jolvera.dev",
+  "alias": "jolvera.now.sh",
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [{ "src": "/(.*)", "dest": "/$1" }]
 }

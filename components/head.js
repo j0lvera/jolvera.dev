@@ -3,9 +3,9 @@ import NextHead from "next/head";
 import { string } from "prop-types";
 import { siteMeta } from "../blog.config";
 
-const defaultDescription = "";
-const defaultOGURL = "";
-const defaultOGImage = "";
+const defaultDescription = siteMeta.description;
+const defaultOGURL = siteMeta.siteUrl;
+const defaultOGImage = siteMeta.image;
 
 const Head = props => (
   <NextHead>

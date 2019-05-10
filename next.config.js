@@ -1,9 +1,7 @@
 const withMDX = require("@zeit/next-mdx")({
   extension: /.mdx?$/,
   options: {
-    // hastPlugins: [require("@mapbox/rehype-prism")]
     hastPlugins: [require("./mdx-prism/index")]
-    // mdPlugins: [require("gatsby-remark-prismjs")]
   }
 });
 
@@ -16,18 +14,28 @@ module.exports = withMDX({
       fs: "empty"
     };
 
-    config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        defaultLoaders.babel,
-        {
-          loader: require("styled-jsx/webpack").loader,
-          options: {
-            type: "global"
+    config.module.rules.push(
+      {
+        test: /\.css$/,
+        use: [
+          defaultLoaders.babel,
+          {
+            loader: require("styled-jsx/webpack").loader,
+            options: {
+              type: "global"
+            }
           }
-        }
-      ]
-    });
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "@svgr/webpack"
+          }
+        ]
+      }
+    );
 
     return config;
   }

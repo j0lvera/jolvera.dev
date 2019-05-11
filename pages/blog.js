@@ -55,21 +55,21 @@ const Blog = ({ url, page = 1 }) => {
       >
         {previous && (
           <li>
-            <Link href={`/blog?page=${previous}`}>
+            <Link href={`/blog?page=${previous}`} as={`/blog/${page}`}>
               <a>Previous</a>
             </Link>
           </li>
         )}
         {range.map(page => (
           <li>
-            <Link href={`/blog?page=${page}`}>
+            <Link href={`/blog?page=${page}`} as={`/blog/${page}`}>
               <a>{page}</a>
             </Link>
           </li>
         ))}
         {next && (
           <li>
-            <Link href={`/blog?page=${next}`}>
+            <Link href={`/blog?page=${next}`} as={`/blog/${next}`}>
               <a>Next</a>
             </Link>
           </li>

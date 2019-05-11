@@ -8,7 +8,7 @@ import Nav from "./nav";
 import Container from "./container";
 import { siteMeta } from "../blog.config";
 
-function Header({ path, pageTitle, theme }) {
+function Header({ path, pageTitle, theme, ogImage }) {
   return (
     <>
       <Head title={pageTitle} />

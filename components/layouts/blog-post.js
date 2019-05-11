@@ -15,7 +15,7 @@ function BlogPost({ meta, children }) {
   const nextPost = blogposts[currentPostIndex + 1];
 
   return (
-    <Layout pageTitle={meta.title}>
+    <Layout pageTitle={meta.title} ogImage={meta.image}>
       <SyntaxHighlight />
       <article>
         <Box as="header" mb={4}>

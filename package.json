@@ -4,7 +4,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "now-build": "next build",
+    "now-build": "next build && node posts/generate-rss-feed.js",
     "test": "jest"
   },
   "dependencies": {
@@ -31,7 +31,6 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "refractor": "^2.6.2",
-    "rss": "^1.2.2",
     "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {

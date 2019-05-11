@@ -24,6 +24,13 @@ const Head = props => (
     <link rel="icon" href="/static/favicon.ico" />
 
     <link
+      rel="alternate"
+      title="RSS Feed"
+      type="application/json"
+      href={`${siteMeta.siteUrl}/feed.json`}
+    />
+
+    <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
       rel="stylesheet"
     />

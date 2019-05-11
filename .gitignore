@@ -9,7 +9,9 @@
 # production
 /build
 /dist
+/out
 /.next
+/static/feed.json
 
 # misc
 .DS_Store

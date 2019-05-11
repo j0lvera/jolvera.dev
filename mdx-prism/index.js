@@ -59,7 +59,6 @@ module.exports = (options = {}) => {
 
         // Fix JSX issue
         html_ = html_.replace(PLAIN_TEXT_WITH_LF_TEST, match => {
-          console.log("match:", match);
           return match.replace(
             /\n/g,
             '</span>\n<span class="token plain-text">'

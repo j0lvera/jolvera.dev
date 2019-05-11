@@ -9,7 +9,6 @@ import Container from "./container";
 import { siteMeta } from "../blog.config";
 
 function Header({ path, pageTitle, theme }) {
-  console.log("theme:", theme);
   return (
     <>
       <Head title={pageTitle} />

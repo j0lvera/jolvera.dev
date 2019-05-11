@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: "https://jolvera.dev",
     social: {
       twitter: "_jolvera"
-    }
+    },
+    postsPerPage: 3
   }
 };

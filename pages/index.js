@@ -1,31 +1,40 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
-import { Flex, Text } from "@rebass/emotion";
+import { withTheme } from "emotion-theming";
+import { Flex, Box, Text } from "@rebass/emotion";
 import Layout from "../components/layouts/default";
 
-const Home = ({ url }) => {
+const Home = ({ url, theme }) => {
+  console.log("theme:", theme);
   return (
     <Layout pageTitle="Home" path={url.pathname}>
-      <h2
-        css={css`
-          margin-top: 2em;
-          margin-bottom: 2em;
-          font-size: 2.4em;
-        `}
+      <Flex
+        flexDirection={["column", "row"]}
+        alignItems="center"
+        justifyContent="center"
+        py={4}
+        my={4}
       >
-        I build inclusive, fast and responsive web experiences.
-      </h2>
+        <Box
+          as="img"
+          src="/static/_jolvera.png"
+          alt="Photo of my Twitter avatar"
+          mb={[4, 0]}
+        />
 
-      <Flex alignItems="center" justifyContent="center">
-        <img src="/static/_jolvera.png" alt="Photo of my Twitter avatar" />
+        <Box ml={3}>
+          <Text as="h2" mb={3} mt={0}>
+            Hi, I'm Juan
+          </Text>
+          <Text as="p" fontSize={3}>
+            I'm a frontend developer &amp; web standards enthusiastic.
+          </Text>
 
-        <Text as="p" mt={2} mb={0} ml={3}>
-          Hello! I'm Juan Olvera. A frontend developer &amp; web standards
-          enthusiastic.
-        </Text>
+          <Text as="p" color={theme.link} fontSize={3} fontWeight="bold" mb={0}>
+            {theme.link}I build inclusive, fast and responsive web experiences.
+          </Text>
+        </Box>
       </Flex>
     </Layout>
   );
 };
 
-export default Home;
+export default withTheme(Home);

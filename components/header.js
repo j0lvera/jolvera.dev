@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
-import { Global, css } from "@emotion/core";
+import { Global, css as styles } from "@emotion/core";
 import { withTheme } from "emotion-theming";
 import { Flex, Box, Text } from "@rebass/emotion";
 import Head from "./head";
@@ -9,31 +9,33 @@ import Container from "./container";
 import { siteMeta } from "../blog.config";
 
 function Header({ path, pageTitle, theme, ogImage }) {
+  const Title = props =>
+    path === "/" ? (
+      <Text as="h1" m={0} {...props}>
+        {siteMeta.title}
+      </Text>
+    ) : (
+      <Text as="p" mb={0} fontSize={4} {...props}>
+        <Link href="/">
+          <a>{siteMeta.title}</a>
+        </Link>
+      </Text>
+    );
+
   return (
     <>
       <Head title={pageTitle} ogImage={ogImage} />
 
       <Box as="header" pt={4} pb={4}>
         <Container>
-          <Flex flexDirection="row" alignItems="center">
-            {path === "/" ? (
-              <Text as="h1" m={0}>
-                {siteMeta.title}
-              </Text>
-            ) : (
-              <Text as="p" mb={0} fontSize={4}>
-                <Link href="/">
-                  <a>{siteMeta.title}</a>
-                </Link>
-              </Text>
-            )}
-
-            <Nav />
+          <Flex flexDirection={["column", "row"]} alignItems="center">
+            <Title />
+            <Nav mt={[3, 0]} />
           </Flex>
         </Container>
       </Box>
       <Global
-        styles={css`
+        styles={styles`
           html {
             margin: 0;
             box-sizing: border-box;

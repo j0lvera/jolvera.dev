@@ -1,19 +1,19 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { Box } from "@rebass/emotion";
+import { Box, Flex } from "@rebass/emotion";
 import Link from "next/link";
 
-const Nav = () => (
-  <Box as="nav" ml="auto">
-    <ul
+const Nav = props => (
+  <Box as="nav" ml={[0, "auto"]} {...props}>
+    <Flex
+      pl={0}
+      ml={0}
+      mb={0}
+      as="ul"
       css={css`
-        display: flex;
-        padding-left: 0;
-        margin-left: 0;
-        margin-bottom: 0;
         list-style: none;
 
-        a {
+        li:not(:first-child) a {
           margin-left: 1rem;
         }
       `}
@@ -34,7 +34,7 @@ const Nav = () => (
           <a>Projects</a>
         </Link>
       </li>
-    </ul>
+    </Flex>
   </Box>
 );
 

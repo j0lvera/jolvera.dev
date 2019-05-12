@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { Box } from "@rebass/emotion";
 import _range from "lodash.range";
 import Link from "next/link";
 import pagination from "pagination";
@@ -26,7 +27,15 @@ const Blog = ({ url, page = 1 }) => {
   const results = _range(fromResult - 1, toResult);
 
   return (
-    <Layout pageTitle="Home" path={url.pathname}>
+    <Layout pageTitle="Blog" path={url.pathname}>
+      <Box as="header" mb={4}>
+        <h1>Blog</h1>
+
+        <p>
+          You can subscribe to my <a href="/feed.json">blog RSS feed.</a>
+        </p>
+      </Box>
+
       {blogposts
         .filter((_post, index) => results.indexOf(index) > -1)
         .map((post, index) => (

@@ -1,4 +1,3 @@
-const generateRSSFeed = require("./posts/generate-rss-feed");
 const withMDX = require("@zeit/next-mdx")({
   extension: /.mdx?$/,
   options: {
@@ -9,14 +8,6 @@ const withMDX = require("@zeit/next-mdx")({
 module.exports = withMDX({
   target: "serverless",
   pageExtensions: ["js", "jsx", "mdx", "md"],
-  // exportPathMap: async (
-  //   defaultPathMap,
-  //   { dev, dir, outDir, distDir, buildId }
-  // ) => {
-  //   if (dev) return defaultPathMap;
-  //   generateRSSFeed(outDir);
-  //   return defaultPathMap;
-  // },
   webpack: (config, { defaultLoaders }) => {
     // Fixes npm packages that depend on `fs` module
     config.node = {

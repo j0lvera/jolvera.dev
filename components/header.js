@@ -11,7 +11,7 @@ import { siteMeta } from "../blog.config";
 function Header({ path, pageTitle, theme, ogImage }) {
   return (
     <>
-      <Head title={pageTitle} />
+      <Head title={pageTitle} ogImage={ogImage} />
 
       <Box as="header" pt={4} pb={4}>
         <Container>

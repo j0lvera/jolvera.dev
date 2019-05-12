@@ -4,8 +4,8 @@
   "alias": "jolvera.now.sh",
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [
-    { "src": "/blog/(?<page>[^/]+)$", "dest": "/blog?page=$page" },
     { "src": "/feed.json", "dest": "/static/feed.json" },
+    { "src": "/blog/(?<page>[^/]+)$", "dest": "/blog?page=$page" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }

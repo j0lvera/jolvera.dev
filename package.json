@@ -4,7 +4,6 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "now-build": "next build && node posts/generate-rss-feed.js",
     "test": "jest"
   },
   "dependencies": {

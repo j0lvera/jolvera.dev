@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "jolvera.dev",
-  "alias": "jolvera.now.sh",
+  "alias": ["jolvera.dev", "jolvera.now.sh"],
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [
     { "src": "/feed.json", "dest": "/static/feed.json" },

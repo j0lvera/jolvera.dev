@@ -55,7 +55,7 @@ const Blog = ({ url, page = 1 }) => {
       >
         {previous && (
           <li>
-            <Link href={`/blog?page=${previous}`} as={`/blog/${page}`}>
+            <Link href={`/blog?page=${previous}`} as={`/blog/${previous}`}>
               <a>Previous</a>
             </Link>
           </li>

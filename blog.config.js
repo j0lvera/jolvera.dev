@@ -2,7 +2,7 @@ module.exports = {
   siteMeta: {
     title: "Juan Olvera",
     author: "Juan Olvera",
-    image: "/static/site-feature.png",
+    image: "/static/site-feature.jpg",
     description:
       "Opinions and thoughts on web development, readings, and personal experiences.",
     siteUrl: "https://jolvera.dev",

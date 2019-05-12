@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const DIR = path.join(process.cwd(), "/pages/2019/");
+const DIR = path.join(process.cwd(), "/pages/posts/");
 const META = /export\s+const\s+meta\s+=\s+(\{(\n|.)*?\n\})/;
 const files = fs
   .readdirSync(DIR)
@@ -21,7 +21,7 @@ module.exports = files
 
     return {
       ...meta,
-      path: "/2019/" + file.replace(/\.mdx?$/, ""),
+      path: "/posts/" + file.replace(/\.mdx?$/, ""),
       index
     };
   })

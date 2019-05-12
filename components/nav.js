@@ -1,39 +1,40 @@
-import styled from "@emotion/styled";
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core";
 import { Box } from "@rebass/emotion";
 import Link from "next/link";
 
-const List = styled.ul`
-  display: flex;
-  padding-left: 0;
-  margin-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-`;
-
-const Anchor = styled.a`
-  margin-left: 1em;
-`;
-
 const Nav = () => (
   <Box as="nav" ml="auto">
-    <List>
+    <ul
+      css={css`
+        display: flex;
+        padding-left: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+
+        a {
+          margin-left: 1rem;
+        }
+      `}
+    >
       <li>
         <Link href="/about">
-          <Anchor>About</Anchor>
+          <a>About</a>
         </Link>
       </li>
       <li>
         <Link href="/blog">
-          <Anchor>Blog</Anchor>
+          <a>Blog</a>
         </Link>
       </li>
 
       <li>
         <Link href="/projects">
-          <Anchor>Projects</Anchor>
+          <a>Projects</a>
         </Link>
       </li>
-    </List>
+    </ul>
   </Box>
 );
 

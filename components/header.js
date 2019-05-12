@@ -129,6 +129,11 @@ function Header({ path, pageTitle, theme, ogImage }) {
             margin-left: auto;
             margin-right: auto;
           }
+
+          article img {
+            max-width: 100%;
+            height: auto;
+          }
         `}
       />
     </>

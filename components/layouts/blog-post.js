@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { Box } from "@rebass/emotion";
 import Layout from "./default";
 import SyntaxHighlight from "../syntax-highlight";
 import PublishedAt from "../utils/published-at";
-import { Box } from "@rebass/emotion";
 import blogposts from "../../posts/index";
 import NextPrevPost from "../next-prev-post";
 

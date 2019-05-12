@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import { Text, Flex } from "@rebass/emotion";
@@ -24,7 +23,7 @@ const NextPrevPost = ({ title, path, position }) => {
           <Flex
             as="small"
             alignItems="center"
-            justifyContent={isNext ? "end" : "start"}
+            justifyContent="flex-end"
             flexDirection={!isNext && "row-reverse"}
             mb={2}
           >

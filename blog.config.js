@@ -9,6 +9,6 @@ module.exports = {
     social: {
       twitter: "_jolvera"
     },
-    postsPerPage: 3
+    postsPerPage: 5
   }
 };

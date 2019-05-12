@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
 import _range from "lodash.range";
 import Link from "next/link";
 import pagination from "pagination";
@@ -60,9 +59,9 @@ const Blog = ({ url, page = 1 }) => {
             </Link>
           </li>
         )}
-        {range.map(page => (
-          <li>
-            <Link href={`/blog?page=${page}`} as={`/blog/${page}`}>
+        {range.map((page, index) => (
+          <li key={index}>
+            <Link key={index} href={`/blog?page=${page}`} as={`/blog/${page}`}>
               <a>{page}</a>
             </Link>
           </li>

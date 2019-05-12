@@ -1,9 +1,5 @@
 import Layout from "./default";
-import SyntaxHighlight from "../syntax-highlight";
-import PublishedAt from "../utils/published-at";
 import { Box } from "@rebass/emotion";
-import blogposts from "../../posts/index";
-import NextPrevPost from "../next-prev-post";
 
 function Page({ meta, children }) {
   return (

@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core";
+import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { Global, css as styles } from "@emotion/core";
@@ -12,7 +15,22 @@ function Header({ path, pageTitle, theme, ogImage }) {
   const Title = props =>
     path === "/" ? (
       <Text as="h1" m={0} {...props}>
-        {siteMeta.title}
+        <Text
+          color={theme.color}
+          as="a"
+          className="h-card"
+          href={siteMeta.siteUrl}
+          rel="me"
+          css={css`
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: none;
+            }
+          `}
+        >
+          {siteMeta.title}
+        </Text>
       </Text>
     ) : (
       <Text as="p" mb={0} fontSize={4} {...props}>

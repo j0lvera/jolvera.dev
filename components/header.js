@@ -35,7 +35,9 @@ function Header({ path, pageTitle, theme, ogImage }) {
     ) : (
       <Text as="p" mb={0} fontSize={4} {...props}>
         <Link href="/">
-          <a>{siteMeta.title}</a>
+          <a className="h-card" rel="me">
+            {siteMeta.title}
+          </a>
         </Link>
       </Text>
     );

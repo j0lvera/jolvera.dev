@@ -35,6 +35,9 @@ const Head = props => (
       rel="stylesheet"
     />
 
+    <link rel="me" href="https://twitter.com/_jolvera"/>
+    <link rel="me" href="https://github.com/j0lv3r4"/>
+
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ""} />
     <meta

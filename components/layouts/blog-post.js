@@ -7,7 +7,7 @@ import PublishedAt from "../utils/published-at";
 import blogposts from "../../posts/index";
 import NextPrevPost from "../next-prev-post";
 
-function BlogPost({ meta, children }) {
+function BlogPost({ path, meta, children }) {
   const currentPostIndex = blogposts
     .map(({ title }) => title)
     .indexOf(meta.title);
@@ -17,13 +17,13 @@ function BlogPost({ meta, children }) {
   return (
     <Layout pageTitle={meta.title} ogImage={meta.image}>
       <SyntaxHighlight />
-      <article>
+      <article className="h-entry">
         <Box as="header" mb={4}>
-          <h1>{meta.title}</h1>
+          <h1 className="p-name">{meta.title}</h1>
 
-          <PublishedAt link={meta.path} date={meta.publishedAt} />
+          <PublishedAt date={meta.publishedAt} link={path} />
         </Box>
-        <div>{children}</div>
+        <div className="e-content">{children}</div>
         <Box as="footer" mt={4}>
           {(previousPost || nextPost) && (
             <Box

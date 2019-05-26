@@ -13,7 +13,7 @@ const Nav = props => (
       css={css`
         list-style: none;
 
-        li:not(:first-child) a {
+        li:not(:first-of-type) a {
           margin-left: 1rem;
         }
       `}

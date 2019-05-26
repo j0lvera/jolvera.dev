@@ -50,8 +50,7 @@ function Header({ path, pageTitle, theme, ogImage }) {
           body {
             margin: 0;
             font-size: 18px;
-            font-family: "Montserrat", sans-serif;
-            font-weight: 500;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
             color: ${theme.color};
             line-height: 1.5;
             background-color: ${theme.backgroundColor};

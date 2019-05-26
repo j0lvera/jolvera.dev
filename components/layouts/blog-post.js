@@ -11,8 +11,8 @@ function BlogPost({ meta, children }) {
   const currentPostIndex = blogposts
     .map(({ title }) => title)
     .indexOf(meta.title);
-  const previousPost = blogposts[currentPostIndex - 1];
-  const nextPost = blogposts[currentPostIndex + 1];
+  const previousPost = blogposts[currentPostIndex + 1];
+  const nextPost = blogposts[currentPostIndex - 1];
 
   return (
     <Layout pageTitle={meta.title} ogImage={meta.image}>

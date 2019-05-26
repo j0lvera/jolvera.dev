@@ -3,7 +3,6 @@ import { Flex, Box, Text } from "@rebass/emotion";
 import Layout from "../components/layouts/default";
 
 const Home = ({ url, theme }) => {
-  console.log("theme:", theme);
   return (
     <Layout pageTitle="Home" path={url.pathname}>
       <Flex
@@ -14,13 +13,14 @@ const Home = ({ url, theme }) => {
         my={4}
       >
         <Box
+          className="u-photo"
           as="img"
           src="/static/_jolvera.png"
           alt="Photo of my Twitter avatar"
           mb={[4, 0]}
         />
 
-        <Box ml={3}>
+        <Box className="p-note" ml={3}>
           <Text as="h2" mb={3} mt={0}>
             Hi, I'm Juan
           </Text>

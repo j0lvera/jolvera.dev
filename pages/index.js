@@ -1,5 +1,6 @@
 import { withTheme } from "emotion-theming";
 import { Flex, Box, Text } from "@rebass/emotion";
+import { siteMeta } from "../blog.config";
 import Layout from "../components/layouts/default";
 
 const Home = ({ url, theme }) => {
@@ -16,7 +17,7 @@ const Home = ({ url, theme }) => {
           className="u-photo"
           as="img"
           src="/static/_jolvera.png"
-          alt="Photo of my Twitter avatar"
+          alt={siteMeta.author}
           mb={[4, 0]}
         />
 

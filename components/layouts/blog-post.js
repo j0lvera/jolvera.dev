@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import { Box } from "@rebass/emotion";
+import Link from "next/link";
+import { Box, Flex, Text } from "@rebass/emotion";
+import { siteMeta } from "../../blog.config";
 import Layout from "./default";
 import SyntaxHighlight from "../syntax-highlight";
 import PublishedAt from "../utils/published-at";
@@ -21,7 +23,22 @@ function BlogPost({ path, meta, children }) {
         <Box as="header" mb={4}>
           <h1 className="p-name">{meta.title}</h1>
 
-          <PublishedAt date={meta.publishedAt} link={path} />
+          <Flex>
+            <PublishedAt date={meta.publishedAt} link={path} mr={3} />
+
+            <Link href="/about">
+              <Text
+                as="a"
+                color="#aaa"
+                rel="author"
+                className="p-author h-card"
+                mr={3}
+                href="/about"
+              >
+                {siteMeta.author}
+              </Text>
+            </Link>
+          </Flex>
         </Box>
         <div className="e-content">{children}</div>
         <Box as="footer" mt={4}>

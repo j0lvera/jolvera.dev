@@ -7,6 +7,7 @@ const Home = ({ url, theme }) => {
   return (
     <Layout pageTitle="Home" path={url.pathname}>
       <Flex
+        className="h-card"
         flexDirection={["column", "row"]}
         alignItems="center"
         justifyContent="center"
@@ -21,11 +22,11 @@ const Home = ({ url, theme }) => {
           mb={[4, 0]}
         />
 
-        <Box className="p-note" ml={3}>
+        <Box ml={3}>
           <Text as="h2" mb={3} mt={0}>
-            Hi, I'm Juan
+            Hi, I'm <span className="p-name">Juan Olvera</span>
           </Text>
-          <Text as="p" fontSize={3}>
+          <Text className="p-note" as="p" fontSize={3}>
             I'm a frontend developer &amp; web standards enthusiastic.
           </Text>
 

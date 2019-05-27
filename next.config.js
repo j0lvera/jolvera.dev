@@ -11,7 +11,8 @@ module.exports = withMDX({
   webpack: (config, { defaultLoaders }) => {
     // Fixes npm packages that depend on `fs` module
     config.node = {
-      fs: "empty"
+      fs: "empty",
+      module: "empty"
     };
 
     config.module.rules.push(

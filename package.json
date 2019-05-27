@@ -30,6 +30,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "refractor": "^2.6.2",
+    "require-from-string": "^2.0.2",
     "unist-util-visit": "^1.4.0"
   },
   "devDependencies": {

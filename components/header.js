@@ -18,7 +18,6 @@ function Header({ path, pageTitle, theme, ogImage }) {
         <Text
           color={theme.color}
           as="a"
-          className="h-card"
           href={siteMeta.siteUrl}
           rel="me"
           css={css`
@@ -35,7 +34,7 @@ function Header({ path, pageTitle, theme, ogImage }) {
     ) : (
       <Text as="p" mb={0} fontSize={4} {...props}>
         <Link href="/">
-          <a className="h-card" rel="me">
+          <a rel="me">
             {siteMeta.title}
           </a>
         </Link>

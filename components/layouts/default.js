@@ -1,12 +1,11 @@
+import React from "react";
 import Header from "../header";
 import Footer from "../footer";
 import Container from "../container";
-import { ThemeProvider } from "emotion-theming";
-import { mastodon } from "../themes";
 
 function Layout({ path, children, pageTitle, ogImage }) {
   return (
-    <ThemeProvider theme={mastodon}>
+    <>
       <Header path={path} pageTitle={pageTitle} ogImage={ogImage} />
 
       <main>
@@ -14,7 +13,7 @@ function Layout({ path, children, pageTitle, ogImage }) {
       </main>
 
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }
 

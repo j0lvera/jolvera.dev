@@ -1,3 +1,4 @@
+import { withRouter } from "next/router";
 import BlogPost from "../../components/layouts/blog-post";
 
 export const meta = {
@@ -9,11 +10,11 @@ export const meta = {
   image: "/static/auth-nextjs.jpg"
 };
 
-export default ({ children, url }) => (
-  <BlogPost path={url.pathname} meta={meta}>
+export default withRouter(({ children, router }) => (
+  <BlogPost path={router.pathname} meta={meta}>
     {children}
   </BlogPost>
-);
+));
 
 User authentication with Next.js has been one of the most requested examples by the community. [The GitHub issue](https://github.com/zeit/next.js/issues/153) had more than 300 likes and hundreds of comments with recommendations and proposals.
 

@@ -1,3 +1,4 @@
+import { withRouter } from "next/router";
 import BlogPost from "../../components/layouts/blog-post";
 
 export const meta = {
@@ -9,11 +10,11 @@ export const meta = {
   image: "/static/auth-nextjs.jpg"
 };
 
-export default ({ children, url }) => (
-  <BlogPost path={url.pathname} meta={meta}>
+export default withRouter(({ children, router }) => (
+  <BlogPost path={router.pathname} meta={meta}>
     {children}
   </BlogPost>
-);
+));
 
 If you know me you probably have seen this website come through lots of redesigns, and with the same amount of blog posts. I don't write a lot in my blog, I mostly use it to experiment with new technologies. For example, the last transition, a couple years ago, was from WordPress to Jekyll and now I switched to Next.js.
 

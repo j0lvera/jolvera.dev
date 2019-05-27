@@ -1,3 +1,4 @@
+import { withRouter } from "next/router";
 import BlogPost from "../../components/layouts/blog-post";
 
 export const meta = {
@@ -9,11 +10,11 @@ export const meta = {
   image: "/static/site-feature.jpg"
 };
 
-export default ({ children, url }) => (
-  <BlogPost path={url.pathname} meta={meta}>
+export default withRouter(({ children, router }) => (
+  <BlogPost path={router.pathname} meta={meta}>
     {children}
   </BlogPost>
-);
+));
 
 If you _still_ love TrueCrypt and like to keep all you workflow inside the command line like me, this small guide is for you.
 

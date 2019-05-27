@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { withRouter } from "next/router";
 import { Box } from "@rebass/emotion";
 import _range from "lodash.range";
 import Link from "next/link";
@@ -9,7 +10,7 @@ import Post from "../components/blog-index-item";
 import blogposts from "../posts/index";
 import { siteMeta } from "../blog.config";
 
-const Blog = ({ url, page = 1 }) => {
+const Blog = ({ router, page = 1 }) => {
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
     current: page,
@@ -27,7 +28,7 @@ const Blog = ({ url, page = 1 }) => {
   const results = _range(fromResult - 1, toResult);
 
   return (
-    <Layout pageTitle="Blog" path={url.pathname}>
+    <Layout pageTitle="Blog" path={router.pathname}>
       <Box as="header" mb={4}>
         <h1>Blog</h1>
 
@@ -91,4 +92,4 @@ Blog.getInitialProps = async ({ query }) => {
   return query ? { page: query.page } : {};
 };
 
-export default Blog;
+export default withRouter(Blog);

@@ -19,7 +19,6 @@ function Header({ path, pageTitle, theme, ogImage }) {
           color={theme.color}
           as="a"
           href={siteMeta.siteUrl}
-          rel="me"
           css={css`
             text-decoration: none;
 

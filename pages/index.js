@@ -1,5 +1,5 @@
 import { withTheme } from "emotion-theming";
-import { Flex, Box, Text } from "@rebass/emotion";
+import { Flex, Box, Text, Link } from "@rebass/emotion";
 import { siteMeta } from "../blog.config";
 import Layout from "../components/layouts/default";
 
@@ -24,7 +24,7 @@ const Home = ({ url, theme }) => {
 
         <Box ml={3}>
           <Text as="h2" mb={3} mt={0}>
-            Hi, I'm <span className="p-name">Juan Olvera</span>
+            Hi, I'm <Link href={siteMeta.siteUrl} rel="me" className="u-url p-name">Juan Olvera</Link>
           </Text>
           <Text className="p-note" as="p" fontSize={3}>
             I'm a frontend developer &amp; web standards enthusiastic.

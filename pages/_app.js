@@ -5,12 +5,12 @@ import { mastodon } from "../components/themes";
 
 class MyApp extends App {
   render() {
-    const { Component } = this.props;
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
         <ThemeProvider theme={mastodon}>
-          <Component />
+          <Component {...pageProps} />
         </ThemeProvider>
       </Container>
     );

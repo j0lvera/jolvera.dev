@@ -1,10 +1,11 @@
 {
   "version": 2,
+  "env": {
+    "webmentionsUrl": "https://webmentions.jolvera.dev"
+  },
   "name": "jolvera.dev",
   "alias": ["jolvera.dev", "jolvera.now.sh"],
-  "builds": [
-    { "src": "package.json", "use": "@now/next" }
-  ],
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [
     { "src": "/(.*)", "dest": "/$1" },
     { "src": "/feed.json", "dest": "/static/feed.json" },

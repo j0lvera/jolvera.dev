@@ -5,10 +5,10 @@ import { withRouter } from "next/router";
 import { Flex, Box, Text } from "@rebass/emotion";
 import { siteMeta } from "../blog.config";
 import Layout from "../components/layouts/default";
-import WebMentions from "../components/webmentions";
-import { getWebMentions } from "../components/webmentions/utils";
+// import WebMentions from "../components/webmentions";
+// import { getWebMentions } from "../components/webmentions/utils";
 
-const Home = ({ router, theme, webmentions }) => {
+const Home = ({ router, theme }) => {
   return (
     <Layout pageTitle="Home" path={router.pathname}>
       <Flex
@@ -53,19 +53,19 @@ const Home = ({ router, theme, webmentions }) => {
         </Box>
       </Flex>
 
-      <WebMentions webmentions={webmentions} url={router.pathname} />
+      {/* <WebMentions webmentions={webmentions} url={router.pathname} /> */}
     </Layout>
   );
 };
 
-Home.getInitialProps = async ctx => {
-  try {
-    const { children } = await getWebMentions();
-    return { webmentions: children };
-  } catch (error) {
-    console.error(error);
-    return {};
-  }
-};
+// Home.getInitialProps = async ctx => {
+//   try {
+//     const { children } = await getWebMentions();
+//     return { webmentions: children };
+//   } catch (error) {
+//     console.error(error);
+//     return {};
+//   }
+// };
 
 export default withTheme(withRouter(Home));

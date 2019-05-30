@@ -28,6 +28,9 @@ function WebMentions({ url, theme }) {
   const postUrl = `${siteMeta.siteUrl}${url}`;
   const sorted = sortWebMentions(webmentionsArr, `${postUrl}`);
 
+  console.log("webmentions:", webmentionsArr);
+  console.log("sorted:", sorted);
+
   const Instructions = () => (
     <Box as="li" mb={sorted.length > 0 ? 4 : 0}>
       <Text as="p">
@@ -51,7 +54,7 @@ function WebMentions({ url, theme }) {
     </Box>
   );
 
-  return webmentionsArr.length ? (
+  return (
     <div
       css={css`
         padding: 1em;
@@ -77,11 +80,6 @@ function WebMentions({ url, theme }) {
         ))}
       </ul>
     </div>
-  ) : (
-    <>
-      <Instructions />
-      <p>No mentions yet.</p>
-    </>
   );
 }
 

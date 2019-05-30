@@ -36,7 +36,7 @@ export const getWebMentions = async () => {
   return {};
 };
 
-export const sortWebMentions = (webmentions, url) =>
+export const sortWebMentions = (webmentions = [], url) =>
   webmentions
     // .filter(entry => entry["wm-target"] === url)
     // .filter(entry => allowedTypes.includes(entry["wm-property"]))

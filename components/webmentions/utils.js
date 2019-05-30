@@ -32,7 +32,8 @@ export const getWebMentions = async () => {
     return js;
   }
 
-  throw new Error(response.statusText);
+  // throw new Error(response.statusText);
+  return {};
 };
 
 export const sortWebMentions = (webmentions, url) =>

@@ -19,6 +19,7 @@ function WebMentions({ url, theme }) {
         setWebmentionsArr(children);
       } catch (error) {
         console.error("Error when trying to get webmentions:", error);
+        setWebmentionsArr([]);
       }
     };
     getData();

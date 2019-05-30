@@ -8,6 +8,7 @@ import SyntaxHighlight from "../syntax-highlight";
 import PublishedAt from "../utils/published-at";
 import blogposts from "../../posts/index";
 import NextPrevPost from "../next-prev-post";
+import WebMentions from "../webmentions";
 
 function BlogPost({ path, meta, children }) {
   const currentPostIndex = blogposts
@@ -67,6 +68,8 @@ function BlogPost({ path, meta, children }) {
           )}
         </Box>
       </article>
+
+      <WebMentions url={path} />
     </Layout>
   );
 }

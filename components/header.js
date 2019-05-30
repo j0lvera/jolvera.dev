@@ -33,9 +33,7 @@ function Header({ path, pageTitle, theme, ogImage }) {
     ) : (
       <Text as="p" mb={0} fontSize={4} {...props}>
         <Link href="/">
-          <a rel="me">
-            {siteMeta.title}
-          </a>
+          <a rel="me">{siteMeta.title}</a>
         </Link>
       </Text>
     );

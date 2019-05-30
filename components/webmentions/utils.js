@@ -5,6 +5,7 @@ const allowedTypes = ["mention-of", "in-reply-to"];
 
 const sanitize = entry => {
   const { content } = entry;
+
   if (!content) {
     return entry;
   }
@@ -34,9 +35,9 @@ export const getWebMentions = async () => {
   throw new Error(response.statusText);
 };
 
-export const sortWebMentions = async (webmentions, url) =>
+export const sortWebMentions = (webmentions, url) =>
   webmentions
     // .filter(entry => entry["wm-target"] === url)
     // .filter(entry => allowedTypes.includes(entry["wm-property"]))
-    // .filter(isValid)
+    .filter(isValid)
     .map(sanitize);

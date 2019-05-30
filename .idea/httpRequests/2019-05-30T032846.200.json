@@ -1,0 +1,143 @@
+{
+  "type": "feed",
+  "name": "Webmentions",
+  "children": [
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "adWhite",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e8fda48d04f8cf4a3f77ae0b7cd5d4d8c763b831f9c754a03f0723e73789b887.jpg",
+        "url": "https://twitter.com/adWhite_mrktg"
+      },
+      "url": "https://twitter.com/adWhite_mrktg/status/1129417228686958595",
+      "published": "2019-05-17T16:03:45+00:00",
+      "wm-received": "2019-05-28T03:07:14Z",
+      "wm-id": 617990,
+      "wm-source": "https://brid-gy.appspot.com/post/twitter/_jolvera/1129417228686958595",
+      "wm-target": "https://jolvera.dev/",
+      "content": {
+        "html": "The Benefits of Switching from Chrome to Firefox <a href=\"http://bit.ly/2VyGkEa\">bit.ly/2VyGkEa</a> by <a href=\"https://twitter.com/_jolvera\">@_jolvera</a> <a href=\"https://twitter.com/search?q=%23TechStuff\">#TechStuff</a> <a href=\"https://twitter.com/search?q=%23Marketing\">#Marketing</a> <a href=\"https://twitter.com/search?q=%23adWhite\">#adWhite</a>\n<a class=\"u-mention\" href=\"https://blog.adwhite.com/the-benefits-of-firefox?hss_channel=tw-30743976\"></a>",
+        "text": "The Benefits of Switching from Chrome to Firefox bit.ly/2VyGkEa by @_jolvera #TechStuff #Marketing #adWhite"
+      },
+      "mention-of": "https://jolvera.dev/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "adWhite",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e8fda48d04f8cf4a3f77ae0b7cd5d4d8c763b831f9c754a03f0723e73789b887.jpg",
+        "url": "https://twitter.com/adWhite_mrktg"
+      },
+      "url": "https://twitter.com/adWhite_mrktg/status/1130302118244573184",
+      "published": "2019-05-20T02:39:59+00:00",
+      "wm-received": "2019-05-28T03:07:08Z",
+      "wm-id": 617989,
+      "wm-source": "https://brid-gy.appspot.com/post/twitter/_jolvera/1130302118244573184",
+      "wm-target": "https://jolvera.dev/",
+      "content": {
+        "html": "What Are Alt Tags? <a href=\"http://bit.ly/2Ejb1HF\">bit.ly/2Ejb1HF</a> by <a href=\"https://twitter.com/_jolvera\">@_jolvera</a> <a href=\"https://twitter.com/search?q=%23Marketing\">#Marketing</a> <a href=\"https://twitter.com/search?q=%23AltTags\">#AltTags</a>\n<a class=\"u-mention\" href=\"https://blog.adwhite.com/what-are-alt-tags?hss_channel=tw-30743976\"></a>",
+        "text": "What Are Alt Tags? bit.ly/2Ejb1HF by @_jolvera #Marketing #AltTags"
+      },
+      "mention-of": "https://jolvera.dev/",
+      "wm-property": "mention-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Julian Wachholz",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/654846ae38a31d9ce1f0a7cf5c77ebf4a42e70a4ccc8c9dbd6da8494b88aa195.jpg",
+        "url": "https://twitter.com/julianwachholz"
+      },
+      "url": "https://twitter.com/_jolvera/status/1127431569042550784#favorited-by-92735877",
+      "published": null,
+      "wm-received": "2019-05-26T21:15:35Z",
+      "wm-id": 617581,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/_jolvera/1127431569042550784/92735877",
+      "wm-target": "https://jolvera.dev/",
+      "like-of": "https://jolvera.dev/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "💚🚀JuanDC: Juan David Castro 🤣 ⚡️ 🇨🇴",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2dfc0c56e8f1dc7447bb52de90ff82bc3c960b1f72770c960b5b60a203f27374.jpg",
+        "url": "https://twitter.com/fjuandc"
+      },
+      "url": "https://twitter.com/fjuandc/status/1128029125292195840",
+      "published": "2019-05-13T20:07:55+00:00",
+      "wm-received": "2019-05-26T21:15:17Z",
+      "wm-id": 617580,
+      "wm-source": "https://brid-gy.appspot.com/repost/twitter/_jolvera/1127431569042550784/1128029125292195840",
+      "wm-target": "https://jolvera.dev/",
+      "content": {
+        "text": "Y'all probably having fun out there with other people, but my dog and I re-launched my website using @zeithq's Next.js, Emotion and deployed"
+      },
+      "repost-of": "https://jolvera.dev/",
+      "wm-property": "repost-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Axotla",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/7056138998d7c057c2c9005158a4d441a84a4f552758fc343a79cbc2ac673033.gif",
+        "url": "https://twitter.com/Axotla"
+      },
+      "url": "https://twitter.com/_jolvera/status/1127431569042550784#favorited-by-19957404",
+      "published": null,
+      "wm-received": "2019-05-26T21:15:03Z",
+      "wm-id": 617579,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/_jolvera/1127431569042550784/19957404",
+      "wm-target": "https://jolvera.dev/",
+      "like-of": "https://jolvera.dev/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "💚 🚀 JuanDC: Juan David Castro 🤣 ⚡️ 🇨🇴",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/2dfc0c56e8f1dc7447bb52de90ff82bc3c960b1f72770c960b5b60a203f27374.jpg",
+        "url": "https://twitter.com/fjuandc"
+      },
+      "url": "https://twitter.com/_jolvera/status/1127431569042550784#favorited-by-728637147482345472",
+      "published": null,
+      "wm-received": "2019-05-26T21:14:52Z",
+      "wm-id": 617578,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/_jolvera/1127431569042550784/728637147482345472",
+      "wm-target": "https://jolvera.dev/",
+      "like-of": "https://jolvera.dev/",
+      "wm-property": "like-of",
+      "wm-private": false
+    },
+    {
+      "type": "entry",
+      "author": {
+        "type": "card",
+        "name": "Tim",
+        "photo": "https://webmention.io/avatar/pbs.twimg.com/e906e30cb706a03935c8b6e030305e0a57c59b770f0037785f5c6a8da5157646.jpg",
+        "url": "https://twitter.com/timneutkens"
+      },
+      "url": "https://twitter.com/_jolvera/status/1127431569042550784#favorited-by-1189966273",
+      "published": null,
+      "wm-received": "2019-05-26T21:14:44Z",
+      "wm-id": 617577,
+      "wm-source": "https://brid-gy.appspot.com/like/twitter/_jolvera/1127431569042550784/1189966273",
+      "wm-target": "https://jolvera.dev/",
+      "like-of": "https://jolvera.dev/",
+      "wm-property": "like-of",
+      "wm-private": false
+    }
+  ]
+}

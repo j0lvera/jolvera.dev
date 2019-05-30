@@ -1,3 +1,4 @@
+import { withRouter } from "next/router";
 import BlogPost from "../../components/layouts/blog-post";
 
 export const meta = {
@@ -9,11 +10,13 @@ export const meta = {
   image: "/static/site-feature.png"
 };
 
-export default withRouter(({ children, router }) => (
-  <BlogPost path={router.pathname} meta={meta}>
-    {children}
-  </BlogPost>
-));
+export default withRouter((props) => {
+    return (
+        <BlogPost path={props.router.pathname} meta={meta}>
+            {props.children}
+        </BlogPost>
+    )
+});
 
 This is a basic writing on how I organize my Sass projects, mostly for self documentation.
 

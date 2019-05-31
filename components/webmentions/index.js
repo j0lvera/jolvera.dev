@@ -7,7 +7,6 @@ import { Button, Text, Box } from "@rebass/emotion";
 import { getWebMentions, sortWebMentions } from "./utils";
 import WebMention from "./webmention";
 import { siteMeta } from "../../blog.config";
-import Link from "next/link";
 
 function WebMentions({ url, theme }) {
   const [webmentionsArr, setWebmentionsArr] = useState([]);
@@ -26,6 +25,7 @@ function WebMentions({ url, theme }) {
   }, []);
 
   const postUrl = `${siteMeta.siteUrl}${url}`;
+  console.log("post url:", postUrl);
   const sorted = sortWebMentions(webmentionsArr, `${postUrl}`);
 
   console.log("webmentions:", webmentionsArr);

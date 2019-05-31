@@ -27,6 +27,9 @@ export const getWebMentions = async () => {
 
   const response = await fetch(url);
 
+  console.log("webmentions url:", url);
+  console.log("webmentions response:", response);
+
   if (response.ok) {
     const js = await response.json();
     return js;

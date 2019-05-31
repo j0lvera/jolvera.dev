@@ -2,12 +2,11 @@ import { withRouter } from "next/router";
 import BlogPost from "../../components/layouts/blog-post";
 
 export const meta = {
-  published: false,
+  published: true,
   publishedAt: "2019-05-13",
   title: "Rebuilding my blog with Next.js",
-  summary:
-    "If you know me you probably have seen this website come through lots of redesigns, and with the same amount of blog posts. I don't write a lot in my blog, I mostly use it to experiment with new technologies.",
-  image: "/static/auth-nextjs.jpg"
+  summary: "I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.",
+  image: "/static/rebuilding-my-blog-with-nextjs.jpg"
 };
 
 export default withRouter(({ children, router }) => (
@@ -16,18 +15,18 @@ export default withRouter(({ children, router }) => (
   </BlogPost>
 ));
 
-I use my website for hacking with new technologies more than writing content. This time I'm rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.
+I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.
 
 
 ## Why Next.js
 
-With the rise of React and the SSR frameworks, e.g. Gatsby and Next.js, I saw a lot of good looking, fast blogs built with Gatsby. [You probably have already seen Dan's](https://overreacted.io/). Of course I went and tried to setup my own, but the thing I didn't like was that Gatsby blog-starter uses GraphQL, which is awesome, but I don't think I need that for a simple blog.
+With the rise of React and the SSR frameworks, e.g. Gatsby and Next.js, I saw a lot of good looking, fast blogs built with Gatsby. [You probably have already seen Dan&rsquo;s](https://overreacted.io/). Of course I went and tried to setup my own, but the thing I didn't like was that Gatsby blog-starter uses GraphQL, which is awesome, but I don't think I need that for a simple blog.
 
-So with the bad habit I have of wanting to build my own version of everything, I started digging and started a repository.
+So with the bad habit I have of wanting to build my own version of everything, I started to investigate how to build my blog with Next.js.
 
 ## How
 
-I got familiar with Next.js in the past few months by contributing an example and other small changes. I'm also currently building two products with it. So, I felt confident that I could build something decent.
+I got familiar with Next.js in the past few months by contributing an example and other small changes. I&rsquo;m also currently building two products with it, so I felt confident that I could build something decent.
 
 ### Checklist
 
@@ -40,9 +39,9 @@ I started with an empty project created with [create-next-app](https://github.co
 
 For a Next.js project, all these things were new for me and had no idea how to implement them. So, I went to investigate how other people are doing it.
 
-Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) told me that Max Stoiber&rsquo;s site ([@mxstbr](https://twitter.com/mxstbr)) was one of his favorite blogs built with Next.js out there, so I looked at the [GitHub repo](https://github.com/mxstbr/mxstbr.com).
+Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) told me that Max Stoiber&rsquo;s site ([@mxstbr](https://twitter.com/mxstbr)) was one of his favorite blogs built with Next.js out there, so I looked at his [GitHub repo](https://github.com/mxstbr/mxstbr.com).
 
-80% of the work was already done in Max&rsquo;s repository and I was fortunate to chat with him about it too. So, most of the credit for the work goes to him, his implementation is pretty clever and helped me a lot.
+80% of the work was already done in Max&rsquo;s repository and I was fortunate to chat with him about it too. Most of the credit for the work goes to him, his implementation is pretty clever and helped me a lot.
 
 ### 1. An `Object` of blog posts
 
@@ -80,7 +79,7 @@ The second issue was trickier. Basic syntax highlighting worked with [rehype-pri
 
 <img
   src="/static/overreacted-code-snippet.jpg"
-  alt="Snippet of code from Dan Abramov's blog"
+  alt="Snippet of code from Dan Abramov&rsquo;s blog"
 />
 
 This was probably the hardest part of the process (for me). To implement this I went to a rabbit hole of learning about [unified.js](https://unified.js.org/) and how syntax trees work. I had to understand how the Gatsby team and contributors implemented their own and how to plug it into the MDX plugin interface.

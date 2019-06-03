@@ -119,3 +119,6 @@ The website feels really fast. The [Lighthouse audit](https://twitter.com/_jolve
 The SSR and pre-fetching features Next.js provides makes the site feel very smooth, fast and responsive.
 
 So far I'm very happy with the experience of developing with Next.js and Now and the results speak for themselves. I will submit a pull request to the Next.js repository to add the blog as an example, and I hope somebody will find this work useful as I found Max&rsquo;s.
+
+Also published  in:
+- <a rel="syndication" class="u-syndication" href="https://dev.to/jolvera/rebuilding-my-blog-with-next-js-1h84">DEV.to</a>

@@ -1,7 +1,7 @@
 const withMDX = require("@zeit/next-mdx")({
   extension: /.mdx?$/,
   options: {
-    hastPlugins: [require("./mdx-prism/index")]
+    hastPlugins: [require("mdx-prism")]
   }
 });
 

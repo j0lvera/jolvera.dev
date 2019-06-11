@@ -1,11 +1,29 @@
-import { Box, Text } from "@rebass/emotion";
+import { Flex, Box, Text } from "@rebass/emotion";
 import Container from "./container";
 
 function Footer() {
   return (
     <Box as="footer" py={4}>
       <Container>
-        <Text as="p" textAlign="center">
+        <Flex justifyContent="center" pb={4}>
+          <Text
+            as="a"
+            href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/previous"
+            mr={2}
+          >
+            ←
+          </Text>
+          An IndieWeb Webring 🕸💍
+          <Text
+            as="a"
+            href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/next"
+            ml={2}
+          >
+            →
+          </Text>
+        </Flex>
+
+        <Text as="p" textAlign="center" mb={0}>
           The content of this site is licensed under a <br />
           <a href="https://creativecommons.org/licenses/by-sa/4.0/">
             Creative Commons Attribution-ShareAlike 4.0 International License

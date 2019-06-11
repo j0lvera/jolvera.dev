@@ -2,10 +2,9 @@
 import { jsx, css } from "@emotion/core";
 import { withTheme } from "emotion-theming";
 import { withRouter } from "next/router";
-import { Flex, Box, Text } from "@rebass/emotion";
+import { Link, Flex, Box, Text } from "@rebass/emotion";
 import { siteMeta } from "../blog.config";
 import Layout from "../components/layouts/default";
-import WebMentions from "../components/webmentions";
 
 const Home = ({ router, theme }) => {
   return (

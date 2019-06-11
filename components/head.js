@@ -30,11 +30,6 @@ const Head = props => (
       href={`${siteMeta.siteUrl}/feed.json`}
     />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet"
-    />
-
     <link rel="me" href="https://twitter.com/_jolvera" />
     <link rel="me" href="https://github.com/j0lv3r4" />
 

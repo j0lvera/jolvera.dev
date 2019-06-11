@@ -23,7 +23,7 @@ function Footer() {
           </Text>
         </Flex>
 
-        <Text as="p" textAlign="center" mb={0}>
+        <Text as="p" textAlign="center">
           The content of this site is licensed under a <br />
           <a href="https://creativecommons.org/licenses/by-sa/4.0/">
             Creative Commons Attribution-ShareAlike 4.0 International License

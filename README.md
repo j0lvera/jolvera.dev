@@ -3,6 +3,8 @@ This project was bootstrapped with [Create Next App](https://github.com/segmenti
 Find the most recent version of this guide at [here](https://github.com/segmentio/create-next-app/blob/master/lib/templates/default/README.md). And check out [Next.js repo](https://github.com/zeit/next.js) for the most up-to-date info.
 
 ## Table of Contents
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fj0lv3r4%2Fjolvera.dev.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fj0lv3r4%2Fjolvera.dev?ref=badge_shield)
+
 
 - [Questions? Feedback?](#questions-feedback)
 - [Folder Structure](#folder-structure)
@@ -232,3 +234,7 @@ You can find more details about [`now` here](https://zeit.co/now).
 ## Something Missing?
 
 If you have ideas for how we could improve this readme or the project in general, [let us know](https://github.com/segmentio/create-next-app/issues) or [contribute some!](https://github.com/segmentio/create-next-app/edit/master/lib/templates/default/README.md)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fj0lv3r4%2Fjolvera.dev.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fj0lv3r4%2Fjolvera.dev?ref=badge_large)

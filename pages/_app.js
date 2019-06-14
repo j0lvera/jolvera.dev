@@ -13,18 +13,9 @@ class MyApp extends App {
     }
 
     return { pageProps };
-
-    // try {
-    //   const { children } = await getWebMentions();
-    //   return { pageProps, webmentions: children };
-    // } catch (error) {
-    //   console.log("Error while trying to get Webmentions", error);
-    //   return { pageProps, webmentions: [] };
-    // }
   }
 
   render() {
-    // const { Component, pageProps, webmentions } = this.props;
     const { Component, pageProps } = this.props;
 
     return (

@@ -8,7 +8,10 @@ const withMDX = require("@zeit/next-mdx")({
 module.exports = withMDX({
   target: "serverless",
   env: {
-    webmentionsUrl: "https://webmentions.jolvera.dev"
+    webmentionsUrl:
+      process.env.NODE_ENV === "production"
+        ? "https://webmentions.jolvera.dev"
+        : "http://localhost:3001"
   },
   pageExtensions: ["js", "jsx", "mdx", "md"],
   webpack: (config, { defaultLoaders, isServer, dev }) => {

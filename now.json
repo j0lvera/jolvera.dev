@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "env": {
-    "webmentionsUrl": "https://webmentions.jolvera.dev"
-  },
   "name": "jolvera.dev",
   "alias": ["jolvera.dev", "jolvera.now.sh"],
   "builds": [{ "src": "package.json", "use": "@now/next" }],

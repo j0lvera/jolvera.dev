@@ -25,7 +25,6 @@ function WebMentions({ url, theme }) {
   }, []);
 
   const postUrl = `${siteMeta.siteUrl}${url}`;
-  console.log("post url:", postUrl);
   const sorted = sortWebMentions(webmentionsArr, `${postUrl}`);
 
   console.log("webmentions:", webmentionsArr);

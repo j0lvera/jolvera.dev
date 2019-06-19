@@ -76,7 +76,7 @@ function Header({ path, pageTitle, theme, ogImage }) {
           h2,
           h3,
           h4 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             font-weight: bold;
             color: inherit;
             line-height: 1.25;

@@ -2,21 +2,21 @@ import { withRouter } from "next/router";
 import BlogPost from "../../components/layouts/blog-post";
 
 export const meta = {
-    published: true,
-    publishedAt: "2019-06-18",
-    title: "Accessible read more links",
-    summary:
+  published: true,
+  publishedAt: "2019-06-18",
+  title: 'Accessible "Read More" links',
+  summary:
     "A pattern you probably have seen in various blogs is the “Read more” link. The design usually has the title first, then a small excerpt of the content and a “Read more” text link to the full post. ",
-    image: "/static/site-feature.png",
-    status: "draft",
+  image: "/static/site-feature.png",
+  status: "Draft"
 };
 
-export default withRouter((props) => {
-    return (
-        <BlogPost path={props.router.pathname} meta={meta}>
-            {props.children}
-        </BlogPost>
-    )
+export default withRouter(props => {
+  return (
+    <BlogPost path={props.router.pathname} meta={meta}>
+      {props.children}
+    </BlogPost>
+  );
 });
 
 "Learn More" Links are part of a pattern we see in Blogs. The design has the title first, then a content excerpt and a text link that takes us to the post page with the full content.![Example of a Blog showing a Read more link](/static/read-more-link-example.png)
@@ -88,7 +88,11 @@ The `span` element you see with the class `screen-reader-text` is supposed to be
 We are very close! The developer used the `title` attribute to add an alternative text to the content inside the link. Unfortunately, [the `title` attribute is not accessible for everyone.](https://developer.paciellogroup.com/blog/2010/11/using-the-html-title-attribute/)
 
 ```html
-<a href="#" title="How QA Testing is Moving Up in Today’s Agile Value Chain" class="readmore button">
+<a
+  href="#"
+  title="How QA Testing is Moving Up in Today’s Agile Value Chain"
+  class="readmore button"
+>
   continue reading
 </a>
 ```
@@ -108,7 +112,10 @@ But there are a few solutions in case you want to keep your “Read more” butt
 One solution is to keep the “Read more” link but add descriptive keywords or context to the link. Instead of having just “Read more,” you would do something like:
 
 ```html
-<a href="/everything-you-need-to-know-about-date-in-javascript/" class="read-more">
+<a
+  href="/everything-you-need-to-know-about-date-in-javascript/"
+  class="read-more"
+>
   Read Everything You Need to Know About Date in JavaScript
 </a>
 ```
@@ -122,7 +129,10 @@ The optimal solution, in my opinion, if you want to keep the “Read more” lin
 This will announce to the screen reader exactly where the link will take them.
 
 ```html
-<a href="#" aria-label="Read Everything You Need to Know About Date in JavaScript">
+<a
+  href="#"
+  aria-label="Read Everything You Need to Know About Date in JavaScript"
+>
   Read article
 </a>
 ```

@@ -9,6 +9,7 @@ import PublishedAt from "../utils/published-at";
 import blogposts from "../../posts/index";
 import NextPrevPost from "../next-prev-post";
 import WebMentions from "../webmentions";
+import Status from "../status";
 
 function BlogPost({ path, meta, children }) {
   const currentPostIndex = blogposts
@@ -39,6 +40,7 @@ function BlogPost({ path, meta, children }) {
                 {siteMeta.author}
               </Text>
             </Link>
+            <Status status={meta.status} />
           </Flex>
         </Box>
         <div className="e-content">{children}</div>

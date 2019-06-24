@@ -5,9 +5,10 @@ export const meta = {
   published: true,
   publishedAt: "2019-05-13",
   title: "Rebuilding my blog with Next.js",
-  summary: "I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.",
+  summary:
+    "I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.",
   image: "/static/rebuilding-my-blog-with-nextjs.jpg",
-  status: "In progress"
+  status: "In Progress"
 };
 
 export default withRouter(({ children, router }) => (
@@ -17,7 +18,6 @@ export default withRouter(({ children, router }) => (
 ));
 
 I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.
-
 
 ## Why Next.js
 
@@ -59,14 +59,13 @@ import blogposts from "../posts/index";
 
 const Blog = () => (
   <ul>
-    {blogposts
-      .map((post, index) => (
-        <li key={index}>
-          <a href={post.path}>{post.title}</a>
-          <time>{post.publishedAt}</time>
-          
-          {post.summary}
-        </li>
+    {blogposts.map((post, index) => (
+      <li key={index}>
+        <a href={post.path}>{post.title}</a>
+        <time>{post.publishedAt}</time>
+
+        {post.summary}
+      </li>
     ))}
   </ul>
 );
@@ -121,5 +120,6 @@ The SSR and pre-fetching features Next.js provides makes the site feel very smoo
 
 So far I'm very happy with the experience of developing with Next.js and Now and the results speak for themselves. I will submit a pull request to the Next.js repository to add the blog as an example, and I hope somebody will find this work useful as I found Max&rsquo;s.
 
-Also published  in:
+Also published in:
+
 - <a rel="syndication" class="u-syndication" href="https://dev.to/jolvera/rebuilding-my-blog-with-next-js-1h84">DEV.to</a>

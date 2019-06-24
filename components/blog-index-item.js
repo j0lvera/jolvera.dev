@@ -18,7 +18,7 @@ const Post = ({ title, summary, date, path, status }) => {
           </Link>
         </Text>
 
-        <Flex>
+        <Flex mt={2}>
           <PublishedAt link={path} date={date} />
 
           <Status ml={3} status={status} />

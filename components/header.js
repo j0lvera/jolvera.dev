@@ -148,6 +148,7 @@ function Header({ path, pageTitle, theme, ogImage }) {
           }
 
           article img {
+            margin-top: 1em;
             max-width: 100%;
             height: auto;
           }

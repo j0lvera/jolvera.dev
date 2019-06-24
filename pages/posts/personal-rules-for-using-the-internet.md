@@ -7,7 +7,8 @@ export const meta = {
   title: "Personal rules for using the Internet",
   summary:
     "This list is a small set of rules I plan to follow to improve my Internet consumption. I put this together because I have been wasting time on my computer in my free time.",
-  image: "/static/site-feature.png"
+  image: "/static/site-feature.png",
+  status: "finished",
 };
 
 export default withRouter(({ children, router }) => (

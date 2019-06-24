@@ -7,7 +7,8 @@ export const meta = {
     title: "Accessible read more links",
     summary:
     "A pattern you probably have seen in various blogs is the “Read more” link. The design usually has the title first, then a small excerpt of the content and a “Read more” text link to the full post. ",
-    image: "/static/site-feature.png"
+    image: "/static/site-feature.png",
+    status: "draft",
 };
 
 export default withRouter((props) => {
@@ -18,11 +19,9 @@ export default withRouter((props) => {
     )
 });
 
-A pattern you probably have seen in various blogs is the “Read more” link. The design usually has the title first, then a small excerpt of the content and a “Read more” text link to the full post.
+"Learn More" Links are part of a pattern we see in Blogs. The design has the title first, then a content excerpt and a text link that takes us to the post page with the full content.![Example of a Blog showing a Read more link](/static/read-more-link-example.png)
 
-![Example of a Blog showing a Read more link](/static/read-more-link-example.png)
-
-We are presented with this pattern in the blog index of a website. We see a list of posts and click on the link of the one that interests us more. This is simple enough for us, the general public, but it gets complicated with people with disabilities. In this case, people that use screen readers.
+Blogs have an index page with a list of posts that makes it easier for the general public to choose what to read. This is simple enough the general public, but it gets complicated with people with disabilities. In this specific case, people that use screen readers.
 
 The fix for this issue is so simple, yet I see it everywhere, on big company websites or simple personal blogs.
 

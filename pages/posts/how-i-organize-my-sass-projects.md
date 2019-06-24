@@ -7,7 +7,8 @@ export const meta = {
   title: "How I organize my Sass projects",
   summary:
     "his is a basic writing on how I organize my Sass projects, mostly for self documentation. I have two structures; mid and small-size projects. I work mostly for small business, so there is no need to over engineer my Sass code.",
-  image: "/static/site-feature.png"
+  image: "/static/site-feature.png",
+  status: "Finished",
 };
 
 export default withRouter((props) => {

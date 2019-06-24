@@ -7,7 +7,8 @@ export const meta = {
   title: "Using TrueCrypt from the command line in OSX",
   summary:
     "If you *still* love TrueCrypt and like to keep all you workflow inside the command line like me, this small guide is for you.",
-  image: "/static/site-feature.jpg"
+  image: "/static/site-feature.jpg",
+  status: "Finished",
 };
 
 export default withRouter(({ children, router }) => (

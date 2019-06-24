@@ -7,7 +7,8 @@ export const meta = {
   title: "User Authentication with Next.js",
   summary:
     "User authentication with Next.js has been one of the most requested examples by the community. The GitHub issue had more than 300 likes and hundreds of comments with recommendations and proposals.",
-  image: "/static/auth-nextjs.jpg"
+  image: "/static/auth-nextjs.jpg",
+  status: "Finished",
 };
 
 export default withRouter(({ children, router }) => (

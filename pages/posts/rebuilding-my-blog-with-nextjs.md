@@ -6,7 +6,8 @@ export const meta = {
   publishedAt: "2019-05-13",
   title: "Rebuilding my blog with Next.js",
   summary: "I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.",
-  image: "/static/rebuilding-my-blog-with-nextjs.jpg"
+  image: "/static/rebuilding-my-blog-with-nextjs.jpg",
+  status: "In progress"
 };
 
 export default withRouter(({ children, router }) => (

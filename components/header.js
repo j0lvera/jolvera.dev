@@ -129,7 +129,7 @@ function Header({ path, pageTitle, theme, ogImage }) {
           blockquote {
             padding: 0.5em 1em;
             margin: 0.8em 0;
-            color: #555;
+            color: #ccc;
             border-left: 0.25em solid #ccc;
           }
 

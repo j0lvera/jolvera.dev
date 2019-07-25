@@ -1,6 +1,7 @@
 import { withRouter } from "next/router";
 import BlogPost from "../components/layouts/blog-post";
 import Page from "../components/layouts/page";
+import Projects from "../components/projects";
 
 export const meta = {
   title: "My Projects",
@@ -13,6 +14,8 @@ export default withRouter(({ children, router }) => (
   </Page>
 ));
 
-This is a list of projects I'm currently workign on.
+<Projects list={[
+    { name: "Pa11y", description: "Tool to create accessible color palettes.", link: "https://pa11y.now.sh", },
+    { name: "Next Authentication", description: "Authentication & Authorization library for the Next.js framework.", link: "https://github.com/j0lv3r4/next-authentication" },
+]} />
 
-- [Pa11y](https://pa11y.now.sh)

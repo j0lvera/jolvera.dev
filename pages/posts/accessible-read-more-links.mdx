@@ -1,5 +1,6 @@
 import { withRouter } from "next/router";
 import BlogPost from "../../components/layouts/blog-post";
+import Changelog from "../../components/changelog";
 
 export const meta = {
   published: true,
@@ -8,7 +9,13 @@ export const meta = {
   summary:
     "A pattern you probably have seen in various blogs is the “Read more” link. The design usually has the title first, then a small excerpt of the content and a “Read more” text link to the full post. ",
   image: "/static/site-feature.png",
-  status: "Draft"
+  status: "Draft",
+  changelog: [
+    [
+      "2019-06-13",
+      "First draft",
+    ]
+  ]
 };
 
 export default withRouter(props => {

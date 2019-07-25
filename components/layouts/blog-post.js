@@ -10,8 +10,10 @@ import blogposts from "../../posts/index";
 import NextPrevPost from "../next-prev-post";
 import WebMentions from "../webmentions";
 import Status from "../status";
+import Changelog from "../changelog";
 
 function BlogPost({ path, meta, children }) {
+  console.log("meta:", meta);
   const currentPostIndex = blogposts
     .map(({ title }) => title)
     .indexOf(meta.title);
@@ -45,6 +47,8 @@ function BlogPost({ path, meta, children }) {
         </Box>
         <div className="e-content">{children}</div>
         <Box as="footer" mt={4}>
+          {meta.changelog && <Changelog details={meta.changelog} />}
+
           {(previousPost || nextPost) && (
             <Box
               css={css`

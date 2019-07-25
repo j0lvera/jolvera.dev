@@ -122,8 +122,8 @@ function Header({ path, pageTitle, theme, ogImage }) {
             position: relative;
             margin: 1.5em 0;
             border: 0;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #fff;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
           }
 
           blockquote {

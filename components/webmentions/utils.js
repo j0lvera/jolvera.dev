@@ -23,16 +23,18 @@ const isValid = entry => {
 };
 
 export const getWebMentions = async () => {
-  const url = process.env.webmentionsUrl;
+  const url = `${process.env.DOMAIN}/api/webmentions`;
+  try {
+    const response = await fetch(url);
 
-  const response = await fetch(url);
-
-  if (response.ok) {
-    const js = await response.json();
-    return js;
+    if (response.ok) {
+      const js = await response.json();
+      return js;
+    }
+  } catch (err) {
+    console.error("Error trying to get the webmentions", err);
+    return {};
   }
-
-  return {};
 };
 
 export const sortWebMentions = (webmentions = [], url) =>

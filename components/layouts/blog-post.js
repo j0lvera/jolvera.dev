@@ -13,7 +13,6 @@ import Status from "../status";
 import Changelog from "../changelog";
 
 function BlogPost({ path, meta, children }) {
-  console.log("meta:", meta);
   const currentPostIndex = blogposts
     .map(({ title }) => title)
     .indexOf(meta.title);

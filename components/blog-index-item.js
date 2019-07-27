@@ -7,8 +7,6 @@ import PublishedAt from "./utils/published-at";
 import Status from "./status";
 
 const Post = ({ title, summary, date, path, status }) => {
-  console.log("status", status);
-
   return (
     <Box as="article" mb={5}>
       <Box as="header" mb={3}>

@@ -27,9 +27,6 @@ function WebMentions({ url, theme }) {
   const postUrl = `${siteMeta.siteUrl}${url}`;
   const sorted = sortWebMentions(webmentionsArr, `${postUrl}`);
 
-  console.log("webmentions:", webmentionsArr);
-  console.log("sorted:", sorted);
-
   const Instructions = () => (
     <Box as="li" mb={sorted.length > 0 ? 4 : 0}>
       <Text as="p">

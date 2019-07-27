@@ -94,8 +94,6 @@ function WebMention({ webmention, theme }) {
   const isRetweet = webmention["repost-of"];
   const isBookmark = webmention["bookmark-of"];
 
-  console.log("url:", url);
-
   return (
     <Flex as="li" mb={4} className="h-card">
       <Link

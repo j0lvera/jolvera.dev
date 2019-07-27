@@ -1,8 +1,9 @@
 import React from "react";
+import fetch from "isomorphic-unfetch";
 import App, { Container } from "next/app";
 import { ThemeProvider } from "emotion-theming";
 import { mastodon } from "../components/themes";
-import { getWebMentions } from "../components/webmentions/utils";
+// import { getWebMentions } from "../components/webmentions/utils";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

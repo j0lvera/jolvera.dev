@@ -2,6 +2,12 @@
   "version": 2,
   "name": "jolvera.dev",
   "alias": ["jolvera.dev", "jolvera.now.sh"],
+  "env": {
+    "REDIS_URL": "@redis-url",
+    "REDIS_PASS": "@redis-password",
+    "WEBMENTION_IO_TOKEN": "@webmention-io-token",
+    "DOMAIN": "@jolveradev-domain"
+  },
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [
     { "src": "/feed.json", "dest": "/_next/static/feed.json" },

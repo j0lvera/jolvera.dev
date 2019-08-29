@@ -62,7 +62,6 @@ const Head = props => (
     <script
       dangerouslySetInnerHTML={{
         __html: `
-<!-- Fathom - simple website analytics - https://usefathom.com -->
 <script>
 (function(f, a, t, h, o, m){
 a[h]=a[h]||function(){
@@ -76,7 +75,6 @@ m.parentNode.insertBefore(o,m)
 fathom('set', 'siteId', 'HWIMPAVV');
 fathom('trackPageview');
 </script>
-<!-- / Fathom -->
       `
       }}
     ></script>

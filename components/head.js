@@ -62,7 +62,6 @@ const Head = props => (
     <script
       dangerouslySetInnerHTML={{
         __html: `
-<script>
 (function(f, a, t, h, o, m){
 a[h]=a[h]||function(){
     (a[h].q=a[h].q||[]).push(arguments)
@@ -74,7 +73,6 @@ m.parentNode.insertBefore(o,m)
 })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
 fathom('set', 'siteId', 'HWIMPAVV');
 fathom('trackPageview');
-</script>
       `
       }}
     ></script>

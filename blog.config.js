@@ -10,5 +10,8 @@ module.exports = {
       twitter: "_jolvera"
     },
     postsPerPage: 5
+  },
+  webMentionsIo: {
+    domain: "jolvera.dev"
   }
 };

@@ -79,4 +79,8 @@ function BlogPost({ path, meta, children }) {
   );
 }
 
+BlogPost.getInitialProps = async ctx => {
+  console.log("context", ctx);
+};
+
 export default BlogPost;

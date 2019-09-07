@@ -7,6 +7,8 @@ const defaultDescription = siteMeta.description;
 const defaultOGURL = siteMeta.siteUrl;
 const defaultOGImage = siteMeta.image;
 
+const fathomId = process.env.FATHOM_ID;
+
 const Head = props => (
   <NextHead>
     <meta charSet="UTF-8" />
@@ -58,10 +60,10 @@ const Head = props => (
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `
+    {fathomId && (
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
 (function(f, a, t, h, o, m){
 a[h]=a[h]||function(){
     (a[h].q=a[h].q||[]).push(arguments)
@@ -71,11 +73,12 @@ m=f.getElementsByTagName('script')[0];
 o.async=1; o.src=t; o.id='fathom-script';
 m.parentNode.insertBefore(o,m)
 })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
-fathom('set', 'siteId', 'HWIMPAVV');
+fathom('set', 'siteId', '${fathomId}');
 fathom('trackPageview');
       `
-      }}
-    ></script>
+        }}
+      />
+    )}
   </NextHead>
 );
 

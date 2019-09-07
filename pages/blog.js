@@ -33,7 +33,7 @@ const Blog = ({ router, page = 1 }) => {
         <h1>Blog</h1>
 
         <p>
-          You can subscribe to my <a href="/feed.json">blog RSS feed.</a>
+          You can subscribe to my <a href="/feed.json">blog JSON feed.</a>
         </p>
       </Box>
 

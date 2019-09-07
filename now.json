@@ -1,12 +1,12 @@
 {
   "version": 2,
   "name": "jolvera.dev",
-  "alias": ["jolvera.dev", "jolvera.now.sh"],
-  "env": {
-    "REDIS_URL": "@redis-url",
-    "REDIS_PASS": "@redis-pass",
-    "WEBMENTION_IO_TOKEN": "@webmention-io-token",
-    "DOMAIN": "@jolveradev-domain"
+  "build": {
+    "env": {
+      "WEBMENTION_IO_TOKEN": "@webmention-io-token",
+      "DOMAIN": "@jolveradev-domain",
+      "FATHOM_ID": "@jolveradev-fathom-id"
+    }
   },
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [

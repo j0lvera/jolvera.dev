@@ -1,16 +1,12 @@
 // @ts-check
 import fetch from "isomorphic-unfetch";
-import { NowRequest, NowResponse } from "@now/node";
+import config from "../../blog.config";
 
 const API_URL = "https://webmention.io/api/mentions.jf2";
 
-/**
- * @param {NowRequest} req
- * @param {NowResponse} res
- */
-module.exports = async (req, res) => {
+export default async (req, res) => {
   res.setHeader("Cache-Control", "max-age=86400, s-maxage=86400");
-  const url = `${API_URL}?domain=jolvera.dev&token=${
+  const url = `${API_URL}?domain=${config.webMentionsIo.domain}&token=${
     process.env.WEBMENTION_IO_TOKEN
   }`;
 

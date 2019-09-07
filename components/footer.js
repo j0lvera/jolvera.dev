@@ -1,32 +1,7 @@
 import { Flex, Box, Text } from "@rebass/emotion";
-import fetch from "isomorphic-unfetch";
 import Container from "./container";
 
-async function pageView() {
-  try {
-    const response = await fetch(`${process.env.DOMAIN}/api/views`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        pathname: window.location.pathname,
-        hostname: window.location.hostname,
-        referrer: document.referrer
-      })
-    });
-
-    if (response.ok) {
-      // console.log("page view response json", await response.json());
-    }
-  } catch (err) {
-    console.error("Could not page view send request.", err);
-  }
-}
-
 function Footer() {
-  typeof window !== "undefined" ? pageView() : null;
-
   return (
     <Box as="footer" py={4}>
       <Container>
@@ -61,7 +36,7 @@ function Footer() {
           <a href="https://github.com/j0lv3r4/jolvera.dev">
             Source code on GitHub
           </a>{" "}
-          - <a href="/feed.json">RSS Feed</a>
+          - <a href="/feed.json">JSON Feed</a>
         </Text>
       </Container>
     </Box>

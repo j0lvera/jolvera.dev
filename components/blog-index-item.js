@@ -12,7 +12,9 @@ const Post = ({ title, summary, date, path, status }) => {
       <Box as="header" mb={3}>
         <Text as="h2" mb={0}>
           <Link href={path}>
-            <a css={theme => ({ color: theme.color })}>{title}</a>
+            <a css={theme => ({ color: theme.color })} tabIndex="0">
+              {title}
+            </a>
           </Link>
         </Text>
 

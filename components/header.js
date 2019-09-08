@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import "what-input";
 import React from "react";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -61,6 +62,15 @@ function Header({ path, pageTitle, theme, ogImage }) {
           *:before,
           *:after {
             box-sizing: inherit;
+          }
+
+          [data-whatintent="mouse"] *:focus {
+            outline: none;
+          }
+
+          [data-whatintent="keyboard"] *:focus {
+            background-color: ${theme.link};
+            color: ${theme.backgroundColor} !important;
           }
 
           body {

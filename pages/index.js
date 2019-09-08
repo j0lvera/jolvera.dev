@@ -1,12 +1,10 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
-import { withTheme } from "emotion-theming";
 import { withRouter } from "next/router";
-import { Link, Flex, Box, Text } from "@rebass/emotion";
+import { Flex, Box, Heading, Text } from "rebass";
+import Link from "../components/link";
 import { siteMeta } from "../blog.config";
 import Layout from "../components/layouts/default";
 
-const Home = ({ router, theme }) => {
+const Home = ({ router }) => {
   return (
     <Layout pageTitle="Home" path={router.pathname}>
       <Flex
@@ -26,26 +24,22 @@ const Home = ({ router, theme }) => {
         />
 
         <Box ml={3}>
-          <Text as="h2" mb={3} mt={0}>
+          <Heading as="h2" mb={3} mt={0}>
             Hi, I'm{" "}
-            <Text
-              as="a"
+            <Link
               className="u-url p-name"
               href={siteMeta.siteUrl}
               rel="me"
-              color={theme.color}
-              css={css`
-                text-decoration: none;
-              `}
+              textDecoration="none"
             >
               Juan Olvera
-            </Text>
-          </Text>
-          <Text className="p-note" as="p" fontSize={3}>
+            </Link>
+          </Heading>
+          <Text className="p-note" as="p" fontSize={2}>
             I'm a frontend developer &amp; web standards enthusiastic.
           </Text>
 
-          <Text as="p" fontSize={3} fontWeight="bold" mb={0}>
+          <Text as="p" fontSize={2} fontWeight="bold" mb={0}>
             I build inclusive, fast and responsive web experiences.
           </Text>
         </Box>
@@ -54,4 +48,4 @@ const Home = ({ router, theme }) => {
   );
 };
 
-export default withTheme(withRouter(Home));
+export default withRouter(Home);

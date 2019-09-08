@@ -1,4 +1,4 @@
-import { Box, Text } from "@rebass/emotion";
+import { Box, Text } from "rebass";
 
 const Changelog = ({ details }) => (
   <>

@@ -1,8 +1,5 @@
 /** @jsx jsx */
 import { jsx, Global, css } from "@emotion/core";
-import React from "react";
-// import theme from "prism-themes/themes/prism-a11y-dark.css";
-import theme from "./syntax-highlight.css";
 
 export default () => (
   <>
@@ -164,7 +161,7 @@ export default () => (
         // TODO: add this in the prismjs plugin
         code {
           padding: 0.1em 0.2em;
-          background-color: #2b2b2b;
+          // background-color: #2b2b2b;
           border-radius: 0.3em;
         }
 

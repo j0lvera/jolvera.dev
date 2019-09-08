@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
-import Link from "next/link";
-import { Box, Flex, Text } from "@rebass/emotion";
+import Link from "../link";
+import { Box, Flex } from "rebass";
 import { siteMeta } from "../../blog.config";
 import Layout from "./default";
 import SyntaxHighlight from "../syntax-highlight";
@@ -29,17 +27,14 @@ function BlogPost({ path, meta, children }) {
           <Flex>
             <PublishedAt date={meta.publishedAt} link={path} mr={3} />
 
-            <Link href="/about">
-              <Text
-                as="a"
-                color="#aaa"
-                rel="author"
-                className="p-author h-card"
-                mr={3}
-                href="/about"
-              >
-                {siteMeta.author}
-              </Text>
+            <Link
+              href="/about"
+              rel="author"
+              className="p-author h-card"
+              mr={3}
+              color="gray"
+            >
+              {siteMeta.author}
             </Link>
             <Status status={meta.status} />
           </Flex>
@@ -50,10 +45,10 @@ function BlogPost({ path, meta, children }) {
 
           {(previousPost || nextPost) && (
             <Box
-              css={css`
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-              `}
+              sx={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr"
+              }}
             >
               {previousPost && (
                 <NextPrevPost
@@ -78,9 +73,5 @@ function BlogPost({ path, meta, children }) {
     </Layout>
   );
 }
-
-BlogPost.getInitialProps = async ctx => {
-  console.log("context", ctx);
-};
 
 export default BlogPost;

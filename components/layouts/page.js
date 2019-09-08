@@ -1,15 +1,15 @@
 import Layout from "./default";
-import { Box } from "@rebass/emotion";
+import { Box, Heading } from "rebass";
 
 function Page({ meta, children }) {
   return (
     <Layout pageTitle={meta.title}>
-      <article>
+      <Box as="article">
         <Box as="header" mb={4}>
-          <h1>{meta.title}</h1>
+          <Heading as="h1">{meta.title}</Heading>
         </Box>
-        <div>{children}</div>
-      </article>
+        <Box>{children}</Box>
+      </Box>
     </Layout>
   );
 }

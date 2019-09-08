@@ -1,42 +1,35 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
 import "what-input";
-import React from "react";
-import Link from "next/link";
 import PropTypes from "prop-types";
 import { Global, css as styles } from "@emotion/core";
-import { withTheme } from "emotion-theming";
-import { Flex, Box, Text } from "@rebass/emotion";
+import { Heading, Flex, Box, Text } from "rebass";
 import Head from "./head";
 import Nav from "./nav";
+import Link from "./link";
 import Container from "./container";
 import { siteMeta } from "../blog.config";
+import theme from "../theme";
 
-function Header({ path, pageTitle, theme, ogImage }) {
+function Header({ path, pageTitle, ogImage }) {
   const Title = props =>
     path === "/" ? (
-      <Text as="h1" m={0} {...props}>
-        <Text
-          color={theme.color}
-          as="a"
+      <Heading as="h1" m={0} {...props}>
+        <Link
           href={siteMeta.siteUrl}
-          css={css`
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: none;
+          sx={{
+            color: "text",
+            textDecoration: "none",
+            "&:hover": {
+              textDecoration: "none"
             }
-          `}
+          }}
         >
           {siteMeta.title}
-        </Text>
-      </Text>
-    ) : (
-      <Text as="p" mb={0} fontSize={4} {...props}>
-        <Link href="/">
-          <a rel="me">{siteMeta.title}</a>
         </Link>
-      </Text>
+      </Heading>
+    ) : (
+      <Link href="/" mb={0} fontSize={4} {...props} rel="me">
+        {siteMeta.title}
+      </Link>
     );
 
   return (
@@ -53,7 +46,7 @@ function Header({ path, pageTitle, theme, ogImage }) {
       </Box>
       <Global
         styles={styles`
-          html {
+          body {
             margin: 0;
             box-sizing: border-box;
           }
@@ -69,98 +62,8 @@ function Header({ path, pageTitle, theme, ogImage }) {
           }
 
           [data-whatintent="keyboard"] *:focus {
-            background-color: ${theme.link};
-            color: ${theme.backgroundColor} !important;
-          }
-
-          body {
-            margin: 0;
-            font-size: 18px;
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-            color: ${theme.color};
-            line-height: 1.5;
-            background-color: ${theme.backgroundColor};
-          }
-
-          h1,
-          h2,
-          h3,
-          h4 {
-            margin-bottom: 0.8rem;
-            font-weight: bold;
-            color: inherit;
-            line-height: 1.25;
-          }
-
-          h1 {
-            font-size: 2rem;
-          }
-
-          h2 {
-            margin-top: 1rem;
-            font-size: 1.8rem;
-          }
-
-          h3 {
-            margin-top: 1.5rem;
-            font-size: 1.5rem;
-          }
-
-          p {
-            margin-top: 0;
-            margin-bottom: 1rem;
-          }
-
-          ul,
-          ol,
-          dl {
-            margin-top: 0;
-            margin-bottom: 1rem;
-          }
-
-          a {
-            color: ${theme.link};
-            cursor: pointer;
-          }
-
-          a:hover,
-          a:focus {
-            text-decoration: underline;
-          }
-
-          hr {
-            position: relative;
-            margin: 1.5em 0;
-            border: 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-          }
-
-          blockquote {
-            padding: 0.5em 1em;
-            margin: 0.8em 0;
-            color: #ccc;
-            border-left: 0.25em solid #ccc;
-          }
-
-          blockquote p:last-child {
-            margin-bottom: 0;
-          }
-
-          pre code {
-            font-size: 18px;
-          }
-
-          .wrap {
-            max-width: 38rem;
-            margin-left: auto;
-            margin-right: auto;
-          }
-
-          article img {
-            margin-top: 1em;
-            max-width: 100%;
-            height: auto;
+            background-color: ${theme.colors.primary};
+            color: ${theme.colors.background} !important;
           }
         `}
       />
@@ -176,4 +79,4 @@ Header.propTypes = {
   })
 };
 
-export default withTheme(Header);
+export default Header;

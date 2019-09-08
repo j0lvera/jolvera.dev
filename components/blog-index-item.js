@@ -1,8 +1,5 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
-import Link from "next/link";
-import { withTheme } from "emotion-theming";
-import { Box, Text, Flex } from "@rebass/emotion";
+import Link from "./link";
+import { Box, Text, Flex } from "rebass";
 import PublishedAt from "./utils/published-at";
 import Status from "./status";
 
@@ -11,10 +8,13 @@ const Post = ({ title, summary, date, path, status }) => {
     <Box as="article" mb={5}>
       <Box as="header" mb={3}>
         <Text as="h2" mb={0}>
-          <Link href={path}>
-            <a css={theme => ({ color: theme.color })} tabIndex="0">
-              {title}
-            </a>
+          <Link
+            href={path}
+            tabIndex="0"
+            color="text"
+            sx={{ textDecoration: "none" }}
+          >
+            {title}
           </Link>
         </Text>
 
@@ -29,4 +29,4 @@ const Post = ({ title, summary, date, path, status }) => {
   );
 };
 
-export default withTheme(Post);
+export default Post;

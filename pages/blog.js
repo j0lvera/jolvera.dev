@@ -1,9 +1,7 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+import { Box, Flex, Heading, Text, Link as RebassLink } from "rebass";
 import { withRouter } from "next/router";
-import { Box } from "@rebass/emotion";
 import _range from "lodash.range";
-import Link from "next/link";
+import Link from "../components/link";
 import pagination from "pagination";
 import Layout from "../components/layouts/default";
 import Post from "../components/blog-index-item";
@@ -30,11 +28,12 @@ const Blog = ({ router, page = 1 }) => {
   return (
     <Layout pageTitle="Blog" path={router.pathname}>
       <Box as="header" mb={4}>
-        <h1>Blog</h1>
+        <Heading as="h1">Blog</Heading>
 
-        <p>
-          You can subscribe to my <a href="/feed.json">blog JSON feed.</a>
-        </p>
+        <Text as="p">
+          You can subscribe to my{" "}
+          <RebassLink href="/feed.json">blog JSON feed.</RebassLink>
+        </Text>
       </Box>
 
       {blogposts
@@ -50,41 +49,33 @@ const Blog = ({ router, page = 1 }) => {
           />
         ))}
 
-      <ul
-        css={css`
-          display: flex;
-          padding-left: 0;
-          margin-left: 0;
-          list-style: none;
-
-          a {
-            padding: 0.5em;
-            margin-right: 0.3em;
-          }
-        `}
+      <Flex
+        as="ul"
+        pl={0}
+        ml={0}
+        sx={{
+          listStyle: "none",
+          "li:not(:first-of-type)": { marginLeft: "1em" }
+        }}
       >
         {previous && (
           <li>
-            <Link href={`/blog?page=${previous}`} as={`/blog/${previous}`}>
-              <a>Previous</a>
-            </Link>
+            <Link href={`/blog/${previous}`}>Previous</Link>
           </li>
         )}
         {range.map((page, index) => (
           <li key={index}>
-            <Link key={index} href={`/blog?page=${page}`} as={`/blog/${page}`}>
-              <a>{page}</a>
+            <Link key={index} href={`/blog/${page}`}>
+              {page}
             </Link>
           </li>
         ))}
         {next && (
           <li>
-            <Link href={`/blog?page=${next}`} as={`/blog/${next}`}>
-              <a>Next</a>
-            </Link>
+            <Link href={`/blog/${next}`}>Next</Link>
           </li>
         )}
-      </ul>
+      </Flex>
     </Layout>
   );
 };

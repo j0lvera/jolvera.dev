@@ -1,12 +1,8 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
-import { Box } from "@rebass/emotion";
+import { Box } from "rebass";
 
 const Container = ({ children }) => (
   <Box
-    css={css`
-      max-width: 45rem;
-    `}
+    maxWidth="45rem"
     mx="auto"
     px={4}
   >

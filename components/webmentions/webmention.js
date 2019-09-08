@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
 import {
   FaBookmark,
   FaHeart,
@@ -7,75 +5,42 @@ import {
   FaTwitter,
   FaReply
 } from "react-icons/fa";
-import styled from "@emotion/styled";
+import Link from "../link";
 import dashify from "dashify";
 import hdate from "human-date";
-import { Flex, Text, Link, Box } from "@rebass/emotion";
-import { withTheme } from "emotion-theming";
-
-const LinkPlain = styled(Link)`
-  display: flex;
-  text-decoration: none;
-`;
+import { Flex, Text, Box, Image } from "rebass";
 
 const Twitter = ({ url }) => (
-  <LinkPlain href={url}>
-    <FaTwitter
-      css={css`
-        color: #1da1f2;
-        margin-right: 0.3em;
-        font-size: 1.3em;
-      `}
-    />
-  </LinkPlain>
+  <Link href={url} color="twitter">
+    <FaTwitter />
+  </Link>
 );
 
 const Bookmark = ({ url }) => (
-  <LinkPlain href={url}>
-    <FaBookmark
-      css={css`
-        font-size: 1.3em;
-        color: #8e44ad;
-      `}
-    />
-  </LinkPlain>
+  <Link href={url} color="bookmark">
+    <FaBookmark />
+  </Link>
 );
 
 const Like = ({ url }) => (
-  <LinkPlain href={url}>
-    <FaHeart
-      css={css`
-        margin-right: 0.3em;
-        font-size: 1.3em;
-        color: rgb(224, 36, 94);
-      `}
-    />
-  </LinkPlain>
+  <Link href={url} color="like">
+    <FaHeart />
+  </Link>
 );
 
 const Retweet = ({ url }) => (
-  <LinkPlain href={url}>
-    <FaRetweet
-      css={css`
-        color: rgb(23, 191, 99);
-        font-size: 1.5em;
-      `}
-    />
-  </LinkPlain>
+  <Link href={url} color="retweet">
+    <FaRetweet />
+  </Link>
 );
 
 const Reply = ({ url }) => (
-  <LinkPlain href={url}>
-    <FaReply
-      css={css`
-        color: rgb(27, 149, 224);
-        font-size: 1.3em;
-      `}
-    />
-  </LinkPlain>
+  <Link href={url} color="reply">
+    <FaReply />
+  </Link>
 );
 
-function WebMention({ webmention, theme }) {
+function WebMention({ webmention }) {
   const { author, content, published, url } = webmention;
 
   const { hostname, protocol } = new URL(url);
@@ -95,41 +60,42 @@ function WebMention({ webmention, theme }) {
   const isBookmark = webmention["bookmark-of"];
 
   return (
-    <Flex as="li" mb={4} className="h-card">
-      <Link
-        href={author.url}
-        mr={2}
-        target="blank"
-        rel="noopener noreferrer"
-        color={theme.link}
-      >
-        <img
+    <Box
+      as="li"
+      mb={4}
+      className="h-card"
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "3em auto"
+      }}
+    >
+      <Link href={author.url} mr={2} target="blank" rel="noopener noreferrer">
+        <Image
           className={author.photo ? "u-photo" : ""}
           src={authorPhoto}
           alt={author.name}
-          css={css`
-            width: 48px;
-            height: auto;
-            border-radius: 50%;
-          `}
+          height="auto"
+          sx={{
+            maxWidth: "45px",
+            borderRadius: "50%"
+          }}
         />
       </Link>
       <Box>
         <Flex alignItems="center">
-          <LinkPlain
+          <Link
             className="u-url"
             href={author.url}
             rel="noopener noreferrer"
             mr={2}
-            color={theme.color}
           >
             <strong className="p-name">{author.name}</strong>
-          </LinkPlain>
+          </Link>
 
           {!isRetweet && !authorWebsite.includes("twitter") ? (
-            <LinkPlain href={authorWebsite} mr={2} color="#aaa">
+            <Link href={authorWebsite} mr={2} color="gray">
               {hostname}
-            </LinkPlain>
+            </Link>
           ) : (
             <Twitter url={author.url} />
           )}
@@ -139,11 +105,11 @@ function WebMention({ webmention, theme }) {
           {isTwitterReply && <Reply url={url} />}
           {isBookmark && <Bookmark url={url} />}
         </Flex>
-        <LinkPlain href={url} rel="noopener noreferrer" color="#aaa">
+        <Link href={url} rel="noopener noreferrer" color="gray">
           <Text as="time" className="dt-published" dateTime={published}>
             {hdate.prettyPrint(published)}
           </Text>
-        </LinkPlain>
+        </Link>
         {content && (
           <Box className="p-content" mt={3}>
             {content.html ? (
@@ -154,8 +120,8 @@ function WebMention({ webmention, theme }) {
           </Box>
         )}
       </Box>
-    </Flex>
+    </Box>
   );
 }
 
-export default withTheme(WebMention);
+export default WebMention;

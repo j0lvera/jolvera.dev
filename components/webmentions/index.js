@@ -1,14 +1,14 @@
 // https://mxb.dev/blog/using-webmentions-on-static-sites/#webmentions
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
-import { withTheme } from "emotion-theming";
 import React, { useState, useEffect } from "react";
-import { Button, Text, Box } from "@rebass/emotion";
+import { Heading, Button, Text, Box } from "rebass";
+import { useColorMode } from "theme-ui";
 import { getWebMentions, sortWebMentions } from "./utils";
 import WebMention from "./webmention";
+import Link from "../link";
 import { siteMeta } from "../../blog.config";
 
 function WebMentions({ url, theme }) {
+  const [colorMode, setColorMode] = useColorMode();
   const [webmentionsArr, setWebmentionsArr] = useState([]);
 
   useEffect(() => {
@@ -27,23 +27,20 @@ function WebMentions({ url, theme }) {
   const postUrl = `${siteMeta.siteUrl}${url}`;
   const sorted = sortWebMentions(webmentionsArr, `${postUrl}`);
 
-  const Instructions = () => (
-    <Box as="li" mb={sorted.length > 0 ? 4 : 0}>
+  const Instructions = props => (
+    <Box {...props}>
       <Text as="p">
         Tweets with a link to this post appear as{" "}
-        <a href="https://indieweb.org/Webmention" target="_blank">
+        <Link href="https://indieweb.org/Webmention" target="_blank">
           Webmentions.
-        </a>
+        </Link>
       </Text>
 
       <Button
+        mt={2}
         as="a"
-        href={`https://twitter.com/intent/tweet/?text=My reply for ${
-          siteMeta.siteUrl
-        }${url}/`}
+        href={`https://twitter.com/intent/tweet/?text=My reply for ${siteMeta.siteUrl}${url}/`}
         target="_blank"
-        bg={theme.link}
-        color={theme.backgroundColor}
       >
         Leave a comment
       </Button>
@@ -51,32 +48,24 @@ function WebMentions({ url, theme }) {
   );
 
   return (
-    <div
-      css={css`
-        padding: 1em;
-        margin-top: 2em;
-        background-color: #111;
-        font-size: 16px;
-      `}
+    <Box
+      variant={colorMode === "light" ? "webmentionsLight" : "webmentionsDark"}
+      p={3}
+      mt={4}
     >
-      <Text as="h2" fontSize={4} mb={3} mt={0}>
+      <Heading as="h2" fontSize={4} my={0}>
         Webmentions
-      </Text>
+      </Heading>
 
-      <ul
-        css={css`
-          margin-left: 0;
-          padding-left: 0;
-          list-style: none;
-        `}
-      >
-        <Instructions />
+      <Instructions mt={4} mb={4} />
+
+      <Box as="ul" ml={0} pl={0} listStyle="none">
         {sorted.map(webmention => (
           <WebMention key={webmention["wm-id"]} webmention={webmention} />
         ))}
-      </ul>
-    </div>
+      </Box>
+    </Box>
   );
 }
 
-export default withTheme(WebMentions);
+export default WebMentions;

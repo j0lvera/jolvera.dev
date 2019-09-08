@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import { Text } from "@rebass/emotion";
+import { Text, Box } from "rebass";
 
 const Status = props => {
   const { status } = props;
@@ -23,17 +21,16 @@ const Status = props => {
 
   return (
     <Text as="p" {...props}>
-      <span
-        css={css`
-          padding: 2px 4px;
-          border-radius: 0.2em;
-          background-color: ${colors[status]["bg"]};
-          color: ${colors[status]["fg"]};
-          font-size: 0.9em;
-        `}
+      <Box
+        as="span"
+        p={1}
+        bg={colors[status]["bg"]}
+        color={colors[status]["fg"]}
+        fontSize={0}
+        sx={{ borderRadius: ".2em" }}
       >
         {status}
-      </span>
+      </Box>
     </Text>
   );
 };

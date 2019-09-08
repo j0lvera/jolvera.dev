@@ -1,8 +1,8 @@
-import { Box, Text } from "@rebass/emotion";
-import Link from "next/link";
+import { Box, Text } from "rebass";
+import Link from "./link";
 
 const Project = ({ project }) => (
-  <Box bg="rgba(0,0,0,0.5);" p={3} mb={2}>
+  <Box my={4}>
     <Link href={project.link}>{project.name}</Link>
 
     <Text as="p" mb={0}>

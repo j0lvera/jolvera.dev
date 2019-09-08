@@ -1,45 +1,34 @@
-/** @jsx jsx */
-import { css, jsx } from "@emotion/core";
 import PropTypes from "prop-types";
-import Link from "next/link";
-import { Text, Flex } from "@rebass/emotion";
+import Link from "./link";
+import { Flex } from "rebass";
 import NextIcon from "../static/next.svg";
 
 const NextPrevPost = ({ title, path, position }) => {
   const isNext = position === "next";
   return (
     <>
-      <Link href={path}>
-        <Text
-          as="a"
-          css={
-            isNext &&
-            css`
-              text-align: right;
-              grid-column: 2/2;
-            `
-          }
+      <Link
+        href={path}
+        sx={{
+          textAlign: isNext ? "right" : "left",
+          gridColumn: isNext && "2/2"
+        }}
+      >
+        <Flex
+          as="small"
+          alignItems="center"
+          justifyContent="flex-end"
+          flexDirection={!isNext && "row-reverse"}
+          mb={2}
         >
-          <Flex
-            as="small"
-            alignItems="center"
-            justifyContent="flex-end"
-            flexDirection={!isNext && "row-reverse"}
-            mb={2}
-          >
-            Read {position} post{" "}
-            {isNext ? (
-              <NextIcon />
-            ) : (
-              <NextIcon
-                css={css`
-                  transform: rotate(180deg);
-                `}
-              />
-            )}
-          </Flex>
-          {title}
-        </Text>
+          Read {position} post{" "}
+          {isNext ? (
+            <NextIcon />
+          ) : (
+            <NextIcon style={{ transform: "rotate(180deg)" }} />
+          )}
+        </Flex>
+        {title}
       </Link>
     </>
   );

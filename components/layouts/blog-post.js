@@ -40,8 +40,10 @@ function BlogPost({ path, meta, children }) {
           </Flex>
         </Box>
         <div className="e-content">{children}</div>
-        <Box as="footer" mt={4}>
-          {meta.changelog && <Changelog details={meta.changelog} />}
+        <Box as="footer" my={4}>
+          <Box my={4}>
+            {meta.changelog && <Changelog details={meta.changelog} />}
+          </Box>
 
           {(previousPost || nextPost) && (
             <Box

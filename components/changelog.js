@@ -1,32 +1,28 @@
 import { Box, Text } from "rebass";
 
 const Changelog = ({ details }) => (
-  <>
-    <hr />
-    <Text as="details" fontFamily="monospace">
-      <summary>
-        <strong>Changelog</strong>
-      </summary>
+  <Text as="details" fontFamily="monospace">
+    <summary>
+      <strong>Changelog</strong>
+    </summary>
 
-      {details.map((detail, index) => {
-        const key = detail[0];
-        const changes = detail.slice(1);
-        return (
-          <Box ml={4} mt={2} key={index}>
-            <Text as="p" mb={0}>
-              {key}:
-            </Text>
-            <ul>
-              {changes.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
+    {details.map((detail, index) => {
+      const key = detail[0];
+      const changes = detail.slice(1);
+      return (
+        <Box ml={0} mt={2} key={index}>
+          <Text as="p" mb={0}>
+            {key}:
+          </Text>
+          <Box as="ul" my={2}>
+            {changes.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </Box>
-        );
-      })}
-    </Text>
-    <hr />
-  </>
+        </Box>
+      );
+    })}
+  </Text>
 );
 
 export default Changelog;

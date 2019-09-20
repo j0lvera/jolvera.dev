@@ -160,7 +160,7 @@ export default () => (
 
         // TODO: add this in the prismjs plugin
         code {
-          padding: 0.1em 0.2em;
+          // padding: 0.1em 0.2em;
           // background-color: #2b2b2b;
           border-radius: 0.3em;
         }

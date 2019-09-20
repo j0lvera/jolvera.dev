@@ -57,7 +57,7 @@ function WebMentions({ url, theme }) {
         Webmentions
       </Heading>
 
-      <Instructions mt={4} mb={4} />
+      <Instructions mt={4} mb={1} />
 
       <Box as="ul" ml={0} pl={0} listStyle="none">
         {sorted.map(webmention => (

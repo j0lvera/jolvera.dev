@@ -5,9 +5,9 @@ import {
   FaTwitter,
   FaReply
 } from "react-icons/fa";
-import Link from "../link";
 import dashify from "dashify";
 import hdate from "human-date";
+import Link from "../link";
 import { Flex, Text, Box, Image } from "rebass";
 
 const Twitter = ({ url }) => (

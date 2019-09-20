@@ -5,16 +5,28 @@ import Layout from "../components/layouts/default";
 
 function StyleGuide({ router }) {
   return (
-    <Layout pageTitle="Blog" path={router.pathname}>
+    <Layout pageTitle="Style Guide" path={router.pathname}>
       <Styled.h1>Style Guide</Styled.h1>
       <ColorPalette />
-      <TypeScale />
+
+      <Styled.h2>Type Specimens</Styled.h2>
+
+      <TypeStyle fontSize={7}>System Font (Body)</TypeStyle>
       <TypeStyle
         fontFamily="heading"
         fontWeight="heading"
         lineHeight="heading"
-      />
-      <TypeStyle fontFamily="body" fontWeight="body" lineHeight="body" />
+        fontSize={7}
+      >
+        Heading
+      </TypeStyle>
+      <TypeStyle fontFamily="monospace" fontSize={7}>
+        Monospace
+      </TypeStyle>
+
+      <Styled.h2>Type Scale</Styled.h2>
+
+      <TypeScale fontWeight="heading" />
     </Layout>
   );
 }

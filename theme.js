@@ -21,33 +21,39 @@ export default {
     text: "#dddddd",
     background: "#16191f",
     primary: "#ffdc00",
-    link: "primay",
-    secondary: "#30c",
+    secondary: "#90adc6",
     muted: "#f6f6f6",
     gray: "rgb(170, 170, 170)",
+    darkGray: "rgb(43, 43, 43)",
     black: "#111",
-    lightDark: "rgb(43, 43, 43)",
-    twitter: "#1da1f2",
-    bookmark: "#8e44ad",
-    like: "rgb(224, 36, 94)",
-    retweet: "rgb(23, 191, 99)",
-    reply: "rgb(27, 149, 224)",
+    code: "#ddd",
+    social: {
+      twitter: "#1da1f2",
+      bookmark: "#8e44ad",
+      like: "rgb(224, 36, 94)",
+      retweet: "rgb(23, 191, 99)",
+      reply: "rgb(27, 149, 224)"
+    },
     modes: {
       light: {
-        text: "#000",
-        background: "#fff",
-        primary: "#07c",
-        secondary: "#30c",
+        text: "#333652",
+        background: "#e9eaec",
+        // primary: "#8e44ad",
+        primary: "#2980b9",
+        // secondary: "#333652",
+        secondary: "#27ae60",
         muted: "#f6f6f9",
         gray: "#555",
-        highlight: "hsla(205, 100%, 40%, 0.125)",
+        darkGray: "rgb(43, 43, 43)",
         black: "#111",
-        lightDark: "#ccc",
-        twitter: "#1da1f2",
-        bookmark: "#8e44ad",
-        like: "rgb(224, 36, 94)",
-        retweet: "rgb(23, 191, 99)",
-        reply: "rgb(27, 149, 224)"
+        code: "#ddd",
+        social: {
+          twitter: "#1da1f2",
+          bookmark: "#8e44ad",
+          like: "rgb(224, 36, 94)",
+          retweet: "rgb(23, 191, 99)",
+          reply: "rgb(27, 149, 224)"
+        }
       }
     }
   },
@@ -56,10 +62,11 @@ export default {
       color: "primary"
     },
     webmentionsDark: {
-      background: "black"
+      backgroundColor: "black"
     },
     webmentionsLight: {
-      background: "background"
+      color: "background",
+      backgroundColor: "darkGray"
     }
   },
   buttons: {
@@ -135,7 +142,9 @@ export default {
       fontWeight: "body",
       lineHeight: "body",
       code: {
-        bg: "lightDark"
+        bg: "darkGray",
+        color: "code",
+        padding: ".1em .2em"
       }
     },
     li: {
@@ -173,6 +182,15 @@ export default {
     },
     img: {
       maxWidth: "100%"
+    },
+    blockquote: {
+      padding: ".5em .5em .5em 1.5em",
+      marginLeft: 0,
+      borderLeft: ".3em solid",
+      borderColor: "primary",
+      "& > p:first-of-type": {
+        marginTop: 0
+      }
     }
   }
 };

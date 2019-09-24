@@ -62,7 +62,8 @@ def resolve(domain: str):
     for record in ids:
         try:
             answers = dns.resolver.query(domain, record)
-            data = [{"record": record, "value": rdata.to_text()} for rdata in answers]
+            data = [{"record": record, "value": rdata.to_text()} 
+                    for rdata in answers]
             for item in data:
                 result.append(item)
         except Exception as e:
@@ -246,5 +247,5 @@ You can check my finished project dnscheck.app in these two repositories:
 
 Also published in:
 
-- <a rel="syndication" class="u-syndication" href="">DEV.to</a>
+- <a rel="syndication" class="u-syndication" href="https://dev.to/jolvera/deploy-a-python-serverless-function-on-zeit-now-22cf">DEV.to</a>
 

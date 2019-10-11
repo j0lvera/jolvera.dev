@@ -16,6 +16,10 @@ const Nav = props => {
           listStyle: "none",
           "li:not(:first-of-type) a, li:not(:first-of-type) button": {
             "margin-left": "1rem"
+          },
+          a: {
+            fontWeight: "bold"
+            // color: "secondary"
           }
         }}
       >
@@ -36,7 +40,7 @@ const Nav = props => {
             py={1}
             px={2}
             fontSize={1}
-            fontWeight="body"
+            fontWeight="bold"
             onClick={e => {
               setColorMode(colorMode === "light" ? "dark" : "light");
             }}

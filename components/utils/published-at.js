@@ -5,7 +5,7 @@ import { parse, format } from "date-fns";
 function PublishedAt(props) {
   const { link, date } = props;
   return (
-    <Link href={link} className="u-url" mb={0} color="gray" {...props}>
+    <Link href={link} className="u-url" mb={0} {...props}>
       <time className="dt-published">
         {format(parse(date), "MMMM DD, YYYY")}
       </time>

@@ -1,14 +1,12 @@
 // https://mxb.dev/blog/using-webmentions-on-static-sites/#webmentions
 import React, { useState, useEffect } from "react";
 import { Heading, Button, Text, Box } from "rebass";
-import { useColorMode } from "theme-ui";
 import { getWebMentions, sortWebMentions } from "./utils";
 import WebMention from "./webmention";
 import Link from "../link";
 import { siteMeta } from "../../blog.config";
 
-function WebMentions({ url, theme }) {
-  const [colorMode, setColorMode] = useColorMode();
+function WebMentions({ url }) {
   const [webmentionsArr, setWebmentionsArr] = useState([]);
 
   useEffect(() => {
@@ -41,6 +39,7 @@ function WebMentions({ url, theme }) {
         as="a"
         href={`https://twitter.com/intent/tweet/?text=My reply for ${siteMeta.siteUrl}${url}/`}
         target="_blank"
+        fontSize={0}
       >
         Leave a comment
       </Button>
@@ -48,12 +47,8 @@ function WebMentions({ url, theme }) {
   );
 
   return (
-    <Box
-      variant={colorMode === "light" ? "webmentionsLight" : "webmentionsDark"}
-      p={3}
-      mt={4}
-    >
-      <Heading as="h2" fontSize={4} my={0}>
+    <Box bg="muted" p={3} mt={4}>
+      <Heading as="h2" fontSize={2} my={0}>
         Webmentions
       </Heading>
 

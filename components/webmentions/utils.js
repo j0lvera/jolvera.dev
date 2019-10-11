@@ -42,6 +42,6 @@ export const sortWebMentions = (webmentions = [], url) =>
     .filter(entry => {
       return entry["wm-target"] == url;
     })
-    // .filter(entry => allowedTypes.includes(entry["wm-property"]))
+    .filter(entry => allowedTypes.includes(entry["wm-property"]))
     .filter(isValid)
     .map(sanitize);

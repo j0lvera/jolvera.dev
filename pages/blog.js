@@ -1,11 +1,12 @@
 import { Box, Flex, Heading, Text, Link as RebassLink } from "rebass";
+import { Styled } from "theme-ui";
 import { withRouter } from "next/router";
 import _range from "lodash.range";
 import Link from "../components/link";
 import pagination from "pagination";
 import Layout from "../components/layouts/default";
 import Post from "../components/blog-index-item";
-import blogposts from "../posts/index";
+import { posts as blogposts } from "../posts/index";
 import { siteMeta } from "../blog.config";
 
 const Blog = ({ router, page = 1 }) => {
@@ -28,7 +29,7 @@ const Blog = ({ router, page = 1 }) => {
   return (
     <Layout pageTitle="Blog" path={router.pathname}>
       <Box as="header" mb={4}>
-        <Heading as="h1">Blog</Heading>
+        <Styled.h1>Blog</Styled.h1>
 
         <Text as="p">
           You can subscribe to my{" "}

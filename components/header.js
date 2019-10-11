@@ -1,7 +1,8 @@
 import "what-input";
 import PropTypes from "prop-types";
 import { Global, css as styles } from "@emotion/core";
-import { Heading, Flex, Box, Text } from "rebass";
+import { Flex, Box, Text } from "rebass";
+import { Styled } from "theme-ui";
 import Head from "./head";
 import Nav from "./nav";
 import Link from "./link";
@@ -12,7 +13,7 @@ import theme from "../theme";
 function Header({ path, pageTitle, ogImage }) {
   const Title = props =>
     path === "/" ? (
-      <Heading as="h1" m={0} {...props}>
+      <Styled.h1>
         <Link
           href={siteMeta.siteUrl}
           sx={{
@@ -25,7 +26,7 @@ function Header({ path, pageTitle, ogImage }) {
         >
           {siteMeta.title}
         </Link>
-      </Heading>
+      </Styled.h1>
     ) : (
       <Link href="/" mb={0} fontSize={4} {...props} rel="me">
         {siteMeta.title}
@@ -36,7 +37,7 @@ function Header({ path, pageTitle, ogImage }) {
     <>
       <Head title={pageTitle} ogImage={ogImage} />
 
-      <Box as="header" pt={4} pb={4}>
+      <Box as="header" py={[3, 4]}>
         <Container>
           <Flex flexDirection={["column", "row"]} alignItems="center">
             <Title />

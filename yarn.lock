@@ -1386,6 +1386,13 @@
     "@theme-ui/preset-tailwind" "^0.2.40"
     "@theme-ui/preset-tosh" "^0.2.40"
 
+"@theme-ui/prism@^0.2.40":
+  version "0.2.40"
+  resolved "https://registry.yarnpkg.com/@theme-ui/prism/-/prism-0.2.40.tgz#e2f4d69981ce33e916199a7a8763ac455878e4fe"
+  integrity sha512-F8gNr0r7qg5pP+QMURzCVnx7LSGgPOEwpXl0QHhV4hOM4klC6P2JnivmEeWNjSC5uFCzeomEgLl1eaFeUheiAw==
+  dependencies:
+    prism-react-renderer "^0.1.7"
+
 "@theme-ui/style-guide@^0.2.41":
   version "0.2.41"
   resolved "https://registry.yarnpkg.com/@theme-ui/style-guide/-/style-guide-0.2.41.tgz#ebf12e9589f14b3ead659e48face1f1a5f6ffe79"
@@ -4929,6 +4936,11 @@ prettier@^1.16.4:
   version "1.18.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
   integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
+
+prism-react-renderer@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-0.1.7.tgz#dc273d0cb6e4a498ba0775094e9a8b01a3ad2eaa"
+  integrity sha512-EhnM0sYfLK103ASK0ViSv0rta//ZGB0dBA9TiFyOvA+zOj5peLmGEG01sLEDwl9sMe+gSqncInafBe1VFTCMvA==
 
 prismjs@^1.15.0, prismjs@~1.17.0:
   version "1.17.1"

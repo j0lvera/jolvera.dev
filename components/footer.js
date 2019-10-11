@@ -20,7 +20,7 @@ function Footer() {
           >
             ←
           </Link>
-          Member of the IndieWeb Webring 🕸💍
+          IndieWeb Webring 🕸💍
           <Link
             href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/next"
             ml={2}

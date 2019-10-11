@@ -1,3 +1,12 @@
+import nightOwl from "@theme-ui/prism/presets/night-owl.json";
+
+const heading = {
+  color: "text",
+  fontFamily: "heading",
+  lineHeight: "heading",
+  fontWeight: "heading"
+};
+
 export default {
   useCustomProperties: true,
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -7,7 +16,8 @@ export default {
     heading: "inherit",
     monospace: "Menlo, monospace"
   },
-  fontSizes: [14, 16, 18, 20, 24, 32, 48, 64, 96],
+  fontSizes: [16, 18, 20, 24, 32, 48, 64, 96],
+  radii: [0, 6, 12, 24, 48],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -18,15 +28,18 @@ export default {
     heading: 1.125
   },
   colors: {
-    text: "#dddddd",
-    background: "#16191f",
-    primary: "#ffdc00",
-    secondary: "#90adc6",
-    muted: "#f6f6f6",
-    gray: "rgb(170, 170, 170)",
-    darkGray: "rgb(43, 43, 43)",
-    black: "#111",
-    code: "#ddd",
+    text: "#e9eaec",
+    background: "#193750",
+    primary: "#05E0E9",
+    // primary: "#d7ff27",
+    // primary: "#ffb701",
+    // secondary: "#90adc6",
+    secondary: "#d7ff27",
+    highlight: "#ffb701",
+    muted: "rgba(0,0,0,0.2)",
+    // highlight: "#05E0E9",
+    accent: "#23e7a9",
+    darken: "#63a5df",
     social: {
       twitter: "#1da1f2",
       bookmark: "#8e44ad",
@@ -90,6 +103,25 @@ export default {
     }
   },
   styles: {
+    pre: {
+      padding: 3,
+      fontSize: 1,
+      overflowX: "auto",
+      ...nightOwl,
+      ".mdx-marker": {
+        backgroundColor: "rgba(255,255,255,0.1)",
+        display: "block",
+        marginLeft: "-1em",
+        marginRight: "-1em",
+        paddingRight: "1em",
+        paddingLeft: "1em",
+        borderLeft: `.25em solid ${nightOwl[".punctuation"].color}`
+      }
+    },
+    code: {
+      fontFamily: "monospace",
+      fontSize: "inherit"
+    },
     root: {
       fontSize: 2,
       fontFamily: "body",
@@ -97,43 +129,27 @@ export default {
       fontWeight: "body"
     },
     h1: {
-      fontFamily: "heading",
-      lineHeight: "1.2",
-      fontWeight: "heading",
+      ...heading,
       fontSize: 5
     },
     h2: {
-      fontFamily: "heading",
-      lineHeight: "1.2",
-      fontWeight: "heading",
+      ...heading,
       fontSize: 4
     },
     h3: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "1.2",
-      fontWeight: "heading",
+      ...heading,
       fontSize: 3
     },
     h4: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "1.2",
-      fontWeight: "heading",
+      ...heading,
       fontSize: 2
     },
     h5: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "1.2",
-      fontWeight: "heading",
+      ...heading,
       fontSize: 1
     },
     h6: {
-      color: "text",
-      fontFamily: "heading",
-      lineHeight: "1.2",
-      fontWeight: "heading",
+      ...heading,
       fontSize: 0
     },
     p: {
@@ -142,9 +158,9 @@ export default {
       fontWeight: "body",
       lineHeight: "body",
       code: {
-        bg: "darkGray",
-        color: "code",
-        padding: ".1em .2em"
+        bg: nightOwl.backgroundColor,
+        color: nightOwl.color,
+        padding: 1
       }
     },
     li: {
@@ -154,18 +170,6 @@ export default {
     },
     a: {
       color: "primary"
-    },
-    pre: {
-      fontFamily: "monospace",
-      overflowX: "auto",
-      code: {
-        color: "inherit"
-      },
-      background: "background"
-    },
-    code: {
-      fontFamily: "monospace",
-      fontSize: "inherit"
     },
     table: {
       width: "100%",

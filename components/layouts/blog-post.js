@@ -1,10 +1,10 @@
+import { Styled } from "theme-ui";
 import Link from "../link";
 import { Box, Flex } from "rebass";
 import { siteMeta } from "../../blog.config";
 import Layout from "./default";
-import SyntaxHighlight from "../syntax-highlight";
 import PublishedAt from "../utils/published-at";
-import blogposts from "../../posts/index";
+import { posts as blogposts } from "../../posts/index";
 import NextPrevPost from "../next-prev-post";
 import WebMentions from "../webmentions";
 import Status from "../status";
@@ -19,21 +19,14 @@ function BlogPost({ path, meta, children }) {
 
   return (
     <Layout pageTitle={meta.title} ogImage={meta.image}>
-      <SyntaxHighlight />
       <article className="h-entry">
         <Box as="header" mb={4}>
-          <h1 className="p-name">{meta.title}</h1>
+          <Styled.h1 className="p-name">{meta.title}</Styled.h1>
 
-          <Flex>
+          <Flex flexDirection={["column", "row"]}>
             <PublishedAt date={meta.publishedAt} link={path} mr={3} />
 
-            <Link
-              href="/about"
-              rel="author"
-              className="p-author h-card"
-              mr={3}
-              color="gray"
-            >
+            <Link href="/about" rel="author" className="p-author h-card" mr={3}>
               {siteMeta.author}
             </Link>
             <Status status={meta.status} />

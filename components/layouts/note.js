@@ -10,7 +10,7 @@ function Note({ path, meta, children }) {
       <Flex
         as="article"
         className="h-entry"
-        bg="primary"
+        bg="muted"
         color="background"
         flexDirection="column"
         sx={{
@@ -47,7 +47,8 @@ function Note({ path, meta, children }) {
 
         <Box
           as="footer"
-          bg="secondary"
+          bg="muted"
+          color="text"
           p={3}
           sx={{ borderBottomLeftRadius: 2, borderBottomRightRadius: 2 }}
         >

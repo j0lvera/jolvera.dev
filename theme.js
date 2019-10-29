@@ -112,7 +112,7 @@ export default {
         backgroundColor: "rgba(255,255,255,0.1)",
         display: "block",
         marginLeft: "-1em",
-        marginRight: "-1em",
+        marginRight: "-.9em",
         paddingRight: "1em",
         paddingLeft: "1em",
         borderLeft: `.25em solid ${nightOwl[".punctuation"].color}`

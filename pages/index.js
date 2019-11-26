@@ -1,9 +1,8 @@
 import { withRouter } from "next/router";
-import { Flex, Box, Image, Text } from "rebass";
-import { Styled } from "theme-ui";
+import { Flex, Box, Text, Image } from "rebass";
 import Link from "../components/link";
 import { siteMeta } from "../blog.config";
-import Layout from "../components/layouts/default";
+import Layout from "../components/layouts/home";
 
 const Home = ({ router }) => {
   return (
@@ -13,19 +12,27 @@ const Home = ({ router }) => {
         flexDirection={["column", "row"]}
         alignItems="center"
         justifyContent="center"
-        py={[1, 4]}
-        my={[1, 4]}
       >
         <Image
-          className="u-photo"
+          className="u-photo visuallyhidden"
           src="/static/_jolvera.png"
           alt={siteMeta.author}
           width="5em"
         />
 
-        <Box ml={3}>
-          <Styled.h2>
-            Hi, I'm{" "}
+        <Box>
+          <Text
+            className="p-note"
+            as="h1"
+            fontSize={[3, 5]}
+            fontWeight="bold"
+            lineHeight="heading"
+            mb={3}
+          >
+            I build inclusive, fast and responsive web experiences
+          </Text>
+          <Text as="p" mt={[2, 4]} fontSize={[1, 3]}>
+            I'm{" "}
             <Link
               className="u-url p-name"
               href={siteMeta.siteUrl}
@@ -35,13 +42,7 @@ const Home = ({ router }) => {
             >
               Juan Olvera
             </Link>
-          </Styled.h2>
-          <Text className="p-note" as="p" fontSize={3} mb={3}>
-            I'm a frontend developer &amp; web standards enthusiastic.
-            <br />
-            <strong>
-              I build inclusive, fast and responsive web experiences.
-            </strong>
+            , a frontend developer &amp; web standards enthusiastic.
           </Text>
         </Box>
       </Flex>

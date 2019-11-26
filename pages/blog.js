@@ -28,12 +28,11 @@ const Blog = ({ router, page = 1 }) => {
 
   return (
     <Layout pageTitle="Blog" path={router.pathname}>
-      <Box as="header" mb={4}>
+      <Box as="header" mb={5}>
         <Styled.h1>Blog</Styled.h1>
 
         <Text as="p">
-          You can subscribe to my{" "}
-          <RebassLink href="/feed.json">blog JSON feed.</RebassLink>
+          Subscribe to the <RebassLink href="/feed.json">JSON feed.</RebassLink>
         </Text>
       </Box>
 

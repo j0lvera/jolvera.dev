@@ -1,3 +1,4 @@
+import { Moon, Sun } from "react-feather";
 import { useColorMode } from "theme-ui";
 import { Box, Flex, Button } from "rebass";
 import Link from "./link";
@@ -6,7 +7,7 @@ const Nav = props => {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <Box as="nav" ml={[0, "auto"]} {...props}>
+    <Box as="nav" ml={[0, 4]} {...props}>
       <Flex
         pl={0}
         ml={0}
@@ -18,8 +19,12 @@ const Nav = props => {
             "margin-left": "1rem"
           },
           a: {
-            fontWeight: "bold"
-            // color: "secondary"
+            // fontWeight: "bold",
+            // textTransform: "uppercase",
+            textDecoration: "none"
+          },
+          "a:hover": {
+            textDecoration: "underline"
           }
         }}
       >
@@ -36,16 +41,18 @@ const Nav = props => {
 
         <li>
           <Button
-            mt={"-10px"}
-            py={1}
-            px={2}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            backgroundColor="transparent"
+            color="primary"
             fontSize={1}
-            fontWeight="bold"
+            p={1}
             onClick={e => {
               setColorMode(colorMode === "light" ? "dark" : "light");
             }}
           >
-            {colorMode === "light" ? "Dark" : "Light"}
+            {colorMode === "light" ? <Moon /> : <Sun />}
           </Button>
         </li>
       </Flex>

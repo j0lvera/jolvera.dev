@@ -1,8 +1,7 @@
 import "what-input";
 import PropTypes from "prop-types";
 import { Global, css as styles } from "@emotion/core";
-import { Flex, Box, Text } from "rebass";
-import { Styled } from "theme-ui";
+import { Flex, Box } from "rebass";
 import Head from "./head";
 import Nav from "./nav";
 import Link from "./link";
@@ -11,37 +10,31 @@ import { siteMeta } from "../blog.config";
 import theme from "../theme";
 
 function Header({ path, pageTitle, ogImage }) {
-  const Title = props =>
-    path === "/" ? (
-      <Styled.h1>
-        <Link
-          href={siteMeta.siteUrl}
-          sx={{
-            color: "text",
-            textDecoration: "none",
-            "&:hover": {
-              textDecoration: "none"
-            }
-          }}
-        >
-          {siteMeta.title}
-        </Link>
-      </Styled.h1>
-    ) : (
-      <Link href="/" mb={0} fontSize={4} {...props} rel="me">
-        {siteMeta.title}
-      </Link>
-    );
+  const titleStyles = {
+    color: "text",
+    // fontSize: 3,
+    fontWeight: "bold",
+    textDecoration: "none",
+    "&:hover": {
+      textDecoration: "none"
+    }
+  };
+
+  const Title = props => (
+    <Link href="/" name="top" sx={titleStyles} {...props} rel="me">
+      {siteMeta.title}
+    </Link>
+  );
 
   return (
     <>
       <Head title={pageTitle} ogImage={ogImage} />
 
-      <Box as="header" py={[3, 4]}>
+      <Box as="header" py={[5]}>
         <Container>
           <Flex flexDirection={["column", "row"]} alignItems="center">
             <Title />
-            <Nav mt={[3, 0]} />
+            <Nav mt={[2, 0]} />
           </Flex>
         </Container>
       </Box>
@@ -66,6 +59,14 @@ function Header({ path, pageTitle, ogImage }) {
             background-color: ${theme.colors.primary};
             color: ${theme.colors.background} !important;
           }
+
+        .visuallyhidden { 
+          position: absolute; 
+          overflow: hidden; 
+          clip: rect(0 0 0 0); 
+          height: 1px; width: 1px; 
+          margin: -1px; padding: 0; border: 0; 
+        }
         `}
       />
     </>

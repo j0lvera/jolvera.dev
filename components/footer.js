@@ -4,23 +4,34 @@ import Container from "./container";
 
 function Footer() {
   return (
-    <Box as="footer" py={4}>
+    <Box as="footer" py={5}>
       <Container>
-        <Text as="p" textAlign="center" mb={2}>
+        <Box mb={2}>
+          <Text as="p">
+            <Link href="#top">Back to top</Link> ·{" "}
+            <Link href="https://github.com/j0lv3r4/jolvera.dev">
+              Website source code
+            </Link>{" "}
+            · <Link href="/feed.json">JSON Feed</Link>
+          </Text>
+        </Box>
+
+        <Text as="p" mb={2}>
           <Link href="https://creativecommons.org/licenses/by-sa/4.0/">
             CC BY-SA
           </Link>{" "}
-          {new Date().getFullYear()}, Juan Olvera
+          {new Date().getFullYear()}, Juan Olvera. Website built with{" "}
+          <Link href="https://nextjs.org">Next.js</Link>
         </Text>
 
-        <Flex justifyContent="center" mb={2}>
+        <Flex mb={2}>
           <Link
             href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/previous"
             mr={2}
           >
             ←
           </Link>
-          IndieWeb Webring 🕸💍
+          IndieWeb 🕸💍
           <Link
             href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/next"
             ml={2}
@@ -28,12 +39,6 @@ function Footer() {
             →
           </Link>
         </Flex>
-
-        <Text textAlign="center">
-          Proudly built with <Link href="https://nextjs.org">Next.js</Link> -{" "}
-          <Link href="https://github.com/j0lv3r4/jolvera.dev">Source code</Link>{" "}
-          - <Link href="/feed.json">JSON Feed</Link>
-        </Text>
       </Container>
     </Box>
   );

@@ -1,32 +1,20 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-import Changelog from "../../components/changelog";
+---
+published: true
+title: 'Accessible "Read More" links'
+excerpt: "A pattern you probably have seen in various blogs is the “Read more” link. The design usually has the title first, then a small excerpt of the content and a “Read more” text link to the full post. "
+date: '2019-06-18'
+status: 'Draft'
+author:
+  name: 'Juan Olvera'
+ogImage:
+  url: '/static/site-feature.png'
+changeLog:
+  2019-06-13: 'First draft'
+---
 
-export const meta = {
-  published: true,
-  publishedAt: "2019-06-18",
-  title: 'Accessible "Read More" links',
-  summary:
-    "A pattern you probably have seen in various blogs is the “Read more” link. The design usually has the title first, then a small excerpt of the content and a “Read more” text link to the full post. ",
-  image: "/static/site-feature.png",
-  status: "Draft",
-  changelog: [
-    [
-      "2019-06-13",
-      "First draft",
-    ]
-  ]
-};
+"Learn More" Links are part of a pattern we see in Blogs. The design has the title first, then a content excerpt and a text link that takes us to the post page with the full content.
 
-export default withRouter(props => {
-  return (
-    <BlogPost path={props.router.pathname} meta={meta}>
-      {props.children}
-    </BlogPost>
-  );
-});
-
-"Learn More" Links are part of a pattern we see in Blogs. The design has the title first, then a content excerpt and a text link that takes us to the post page with the full content.![Example of a Blog showing a Read more link](/static/read-more-link-example.png)
+![Example of a Blog showing a Read more link](/static/read-more-link-example.png)
 
 Blogs have an index page with a list of posts that makes it easier for the general public to choose what to read. This is simple enough the general public, but it gets complicated with people with disabilities. In this specific case, people that use screen readers.
 

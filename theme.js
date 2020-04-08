@@ -103,30 +103,36 @@ export default {
     }
   },
   styles: {
-    pre: {
-      padding: 3,
-      fontSize: 1,
-      overflowX: "auto",
-      ...nightOwl,
-      ".mdx-marker": {
-        backgroundColor: "rgba(255,255,255,0.1)",
-        display: "block",
-        marginLeft: "-1em",
-        marginRight: "-.9em",
-        paddingRight: "1em",
-        paddingLeft: "1em",
-        borderLeft: `.25em solid ${nightOwl[".punctuation"].color}`
-      }
-    },
-    code: {
-      fontFamily: "monospace",
-      fontSize: "inherit"
-    },
     root: {
       fontSize: 2,
       fontFamily: "body",
       lineHeight: "body",
-      fontWeight: "body"
+      fontWeight: "body",
+      img: {
+        maxWidth: "100%"
+      },
+      a: {
+        color: "primary"
+      },
+      pre: {
+        padding: 3,
+        fontSize: 1,
+        overflowX: "auto",
+        ...nightOwl,
+        ".mdx-marker": {
+          backgroundColor: "rgba(255,255,255,0.1)",
+          display: "block",
+          marginLeft: "-1em",
+          marginRight: "-.9em",
+          paddingRight: "1em",
+          paddingLeft: "1em",
+          borderLeft: `.25em solid ${nightOwl[".punctuation"].color}`
+        }
+      },
+      code: {
+        fontFamily: "monospace",
+        fontSize: "inherit"
+      }
     },
     h1: {
       ...heading,

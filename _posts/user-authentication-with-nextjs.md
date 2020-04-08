@@ -1,21 +1,15 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-
-export const meta = {
-  published: true,
-  publishedAt: "2019-02-20",
-  title: "User Authentication with Next.js",
-  summary:
-    "User authentication with Next.js has been one of the most requested examples by the community. The GitHub issue had more than 300 likes and hundreds of comments with recommendations and proposals.",
-  image: "/static/auth-nextjs.jpg",
-  status: "Finished",
-};
-
-export default withRouter(({ children, router }) => (
-  <BlogPost path={router.pathname} meta={meta}>
-    {children}
-  </BlogPost>
-));
+---
+published: true
+title: 'User Authentication with Next.js'
+excerpt: "User authentication with Next.js has been one of the most requested examples by the community. The GitHub issue had more than 300 likes and hundreds of comments with recommendations and proposals."
+date: '2019-02-20'
+status: 'Finished'
+author:
+  name: 'Juan Olvera'
+ogImage:
+  url: '/static/auth-nextjs.jpg'
+changeLog:
+---
 
 User authentication with Next.js has been one of the most requested examples by the community. [The GitHub issue](https://github.com/zeit/next.js/issues/153) had more than 300 likes and hundreds of comments with recommendations and proposals.
 

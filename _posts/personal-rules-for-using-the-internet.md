@@ -1,22 +1,15 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-
-export const meta = {
-  published: true,
-  publishedAt: "2019-01-03",
-  title: "Personal rules for using the Internet",
-  summary:
-    "This list is a small set of rules I plan to follow to improve my Internet consumption. I put this together because I have been wasting time on my computer in my free time.",
-  image: "/static/site-feature.png",
-  status: "Finished",
-};
-
-export default withRouter(({ children, router }) => (
-  <BlogPost path={router.pathname} meta={meta}>
-    {children}
-  </BlogPost>
-));
-
+---
+published: true
+title: 'Personal rules for using the Internet'
+excerpt: "This list is a small set of rules I plan to follow to improve my Internet consumption. I put this together because I have been wasting time on my computer in my free time."
+date: '2019-01-03'
+status: 'Finished'
+author:
+  name: 'Juan Olvera'
+ogImage:
+  url: '/static/site-feature.png'
+changeLog:
+---
 
 This list is a small set of rules I plan to follow to improve my Internet consumption. I put this together because I have been wasting time on my computer in my free time.
 

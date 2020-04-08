@@ -4,58 +4,58 @@ import { Box, Flex } from "rebass";
 import { siteMeta } from "../../blog.config";
 import Layout from "./default";
 import PublishedAt from "../utils/published-at";
-import { posts as blogposts } from "../../posts/index";
 import NextPrevPost from "../next-prev-post";
-import WebMentions from "../webmentions";
 import Status from "../status";
-import Changelog from "../changelog";
 
-function BlogPost({ path, meta, children }) {
-  const currentPostIndex = blogposts
-    .map(({ title }) => title)
-    .indexOf(meta.title);
-  const previousPost = blogposts[currentPostIndex + 1];
-  const nextPost = blogposts[currentPostIndex - 1];
-
+function BlogPost({
+  content,
+  slug,
+  title,
+  image,
+  date,
+  status,
+  prevPost,
+  nextPost
+}) {
   return (
-    <Layout pageTitle={meta.title} ogImage={meta.image}>
+    <Layout pageTitle={title} ogImage={image}>
       <article className="h-entry">
         <Box as="header" mb={4}>
-          <Styled.h1 className="p-name">{meta.title}</Styled.h1>
+          <Styled.h1 className="p-name">{title}</Styled.h1>
 
           <Flex flexDirection={["column", "row"]}>
-            <PublishedAt date={meta.publishedAt} link={path} mr={3} />
+            <PublishedAt date={date} link={slug} mr={3} />
 
             <Link href="/about" rel="author" className="p-author h-card" mr={3}>
               {siteMeta.author}
             </Link>
-            <Status status={meta.status} />
+            <Status status={status} />
           </Flex>
         </Box>
-        <div className="e-content">{children}</div>
-        <Box as="footer" my={4}>
-          <Box my={4}>
-            {meta.changelog && <Changelog details={meta.changelog} />}
-          </Box>
+        <div
+          className="e-content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
 
-          {(previousPost || nextPost) && (
+        <Box as="footer" my={4}>
+          {(prevPost || nextPost) && (
             <Box
               sx={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr"
               }}
             >
-              {previousPost && (
+              {prevPost.slug && (
                 <NextPrevPost
-                  title={previousPost.title}
-                  path={previousPost.path}
+                  title={prevPost.title}
+                  slug={prevPost.slug}
                   position="previous"
                 />
               )}
-              {nextPost && (
+              {nextPost.slug && (
                 <NextPrevPost
                   title={nextPost.title}
-                  path={nextPost.path}
+                  slug={nextPost.slug}
                   position="next"
                 />
               )}
@@ -63,8 +63,6 @@ function BlogPost({ path, meta, children }) {
           )}
         </Box>
       </article>
-
-      <WebMentions url={path} />
     </Layout>
   );
 }

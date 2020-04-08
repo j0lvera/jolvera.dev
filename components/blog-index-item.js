@@ -9,7 +9,7 @@ const Post = ({ title, summary, date, path, status }) => {
       <Box as="header" mb={3}>
         <Text as="h2" mb={0}>
           <Link
-            href={path}
+            href={`/posts/${path}`}
             tabIndex="0"
             color="text"
             sx={{ textDecoration: "none" }}

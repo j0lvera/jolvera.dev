@@ -1,21 +1,15 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-
-export const meta = {
-  published: true,
-  publishedAt: "2015-04-01",
-  title: "Using TrueCrypt from the command line in OSX",
-  summary:
-    "If you *still* love TrueCrypt and like to keep all you workflow inside the command line like me, this small guide is for you.",
-  image: "/static/site-feature.jpg",
-  status: "Finished",
-};
-
-export default withRouter(({ children, router }) => (
-  <BlogPost path={router.pathname} meta={meta}>
-    {children}
-  </BlogPost>
-));
+---
+published: true
+title: 'Using TrueCrypt from the command line in OSX'
+excerpt: "If you *still* love TrueCrypt and like to keep all you workflow inside the command line like me, this small guide is for you."
+date: '2015-04-01'
+status: 'Finished'
+author:
+  name: 'Juan Olvera'
+ogImage:
+  url: '/static/site-feature.jpg'
+changeLog:
+---
 
 If you _still_ love TrueCrypt and like to keep all you workflow inside the command line like me, this small guide is for you.
 

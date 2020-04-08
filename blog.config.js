@@ -9,7 +9,7 @@ module.exports = {
     social: {
       twitter: "_jolvera"
     },
-    postsPerPage: 8
+    postsPerPage: 5
   },
   webMentionsIo: {
     domain: "jolvera.dev"

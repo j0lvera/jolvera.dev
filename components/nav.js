@@ -7,7 +7,7 @@ const Nav = props => {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <Box as="nav" ml={[0, 4]} {...props}>
+    <Box as="nav" ml={"auto"} {...props}>
       <Flex
         pl={0}
         ml={0}
@@ -19,8 +19,6 @@ const Nav = props => {
             "margin-left": "1rem"
           },
           a: {
-            // fontWeight: "bold",
-            // textTransform: "uppercase",
             textDecoration: "none"
           },
           "a:hover": {
@@ -31,12 +29,9 @@ const Nav = props => {
         <li>
           <Link href="/about">About</Link>
         </li>
-        <li>
-          <Link href="/blog">Blog</Link>
-        </li>
 
         <li>
-          <Link href="/projects">Projects</Link>
+          <Link href="/blog">Blog</Link>
         </li>
 
         <li>

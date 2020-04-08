@@ -1,23 +1,16 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-
-export const meta = {
-  published: true,
-  publishedAt: "2015-06-16",
-  title: "How I organize my Sass projects",
-  summary:
-    "his is a basic writing on how I organize my Sass projects, mostly for self documentation. I have two structures; mid and small-size projects. I work mostly for small business, so there is no need to over engineer my Sass code.",
-  image: "/static/site-feature.png",
-  status: "Finished",
-};
-
-export default withRouter((props) => {
-    return (
-        <BlogPost path={props.router.pathname} meta={meta}>
-            {props.children}
-        </BlogPost>
-    )
-});
+---
+published: true
+title: 'How I organize my Sass projects'
+excerpt: "his is a basic writing on how I organize my Sass projects, mostly for self documentation. I have two structures; mid and small-size projects. I work mostly for small business, so there is no need to over engineer my Sass code."
+date: '2015-06-16'
+status: 'Finished'
+author:
+  name: 'Juan Olvera'
+ogImage:
+  url: '/static/site-feature.png'
+changeLog:
+  2019-06-13: 'First draft'
+---
 
 This is a basic writing on how I organize my Sass projects, mostly for self documentation.
 

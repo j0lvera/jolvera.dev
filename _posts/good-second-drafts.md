@@ -1,30 +1,16 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-import Changelog from "../../components/changelog";
-
-export const meta = {
-  published: true,
-  publishedAt: "2019-07-25",
-  title: 'Publishing good second drafts',
-  summary:
-    "I’ve been trying to improve the amount of writing I publish. I write a lot, but mostly rough ideas in a notebook. I followed every tip online to write more, and they worked, but now I don’t have content I’d like to publish in my blog, yet. So, the problem wasn’t quantity but quality. Or so I thought.",
-  image: "/static/publishing-good-second-drafts.jpeg",
-  status: "Draft",
-  changelog: [
-    [
-      "2019-07-25",
-      "First draft",
-    ]
-  ]
-};
-
-export default withRouter(props => {
-  return (
-    <BlogPost path={props.router.pathname} meta={meta}>
-      {props.children}
-    </BlogPost>
-  );
-});
+---
+published: true
+title: 'Publishing good second drafts'
+excerpt: "I’ve been trying to improve the amount of writing I publish. I write a lot, but mostly rough ideas in a notebook. I followed every tip online to write more, and they worked, but now I don’t have content I’d like to publish in my blog, yet. So, the problem wasn’t quantity but quality. Or so I thought."
+date: '2019-07-25'
+status: 'Draft'
+author:
+  name: 'Juan Olvera'
+ogImage:
+  url: '/static/publishing-good-second-drafts.jpeg'
+changeLog:
+  2019-07-25: 'First draft'
+---
 
 I’ve been trying to improve the amount of writing I publish. I write a lot, but mostly rough ideas in a notebook. I followed every tip online to write more, and they worked, but now I don’t have content I’d like to publish in my blog, yet. So, the problem wasn’t quantity but quality. Or so I thought.
 

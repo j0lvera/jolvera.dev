@@ -1,29 +1,16 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-
-export const meta = {
-  published: true,
-  publishedAt: "2019-05-13",
-  title: "Rebuilding my blog with Next.js",
-  summary:
-    "I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version.",
-  image: "/static/rebuilding-my-blog-with-nextjs.jpeg",
-  status: "In Progress",
-  changelog: [
-    [
-      "2019-10-29",
-      "Add reference to script generating the JSON feed in build time.",
-      "Fix grammar issues.",
-    ]
-  ]
-};
-
-
-export default withRouter(({ children, router }) => (
-  <BlogPost path={router.pathname} meta={meta}>
-    {children}
-  </BlogPost>
-));
+---
+published: true
+title: 'Rebuilding my blog with Next.js'
+excerpt: "I use my website for hacking with new technologies more than writing content. This time I&rsquo;m rebuilding it using Next.js and if you&rsquo;re reading this, I already deployed the first version."
+date: '2019-05-13'
+status: 'In Progress'
+author:
+  name: 'Juan Olvera'
+ogImage:
+  url: '/static/rebuilding-my-blog-with-nextjs.jpeg'
+changeLog:
+  2019-10-29: 'Add reference to script generating the JSON feed in build time and fix grammar issues.'
+---
 
 I use my website to try new technologies more than writing content, this means that I&#8217;ve rebuilt my site more times than I&#8217;ve written articles. This time I&#8217;m rebuilding it using Next.js, and if you&#8217;re reading this, I already deployed the first version.
 

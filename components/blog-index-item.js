@@ -4,12 +4,14 @@ import PublishedAt from "./utils/published-at";
 import Status from "./status";
 
 const Post = ({ title, summary, date, path, status }) => {
+  console.log("path", path);
+
   return (
     <Box as="article" mb={5}>
       <Box as="header" mb={3}>
         <Text as="h2" mb={0}>
           <Link
-            href={path}
+            href={`/posts/${path}`}
             tabIndex="0"
             color="text"
             sx={{ textDecoration: "none" }}
@@ -19,9 +21,9 @@ const Post = ({ title, summary, date, path, status }) => {
         </Text>
 
         <Flex mt={2}>
-          <PublishedAt link={path} date={date} />
+          {/*<PublishedAt link={path} date={date} />*/}
 
-          <Status ml={3} status={status} />
+          {/*<Status ml={3} status={status} />*/}
         </Flex>
       </Box>
       <div className="post-summary">{summary}</div>

@@ -3,12 +3,12 @@ import Link from "./link";
 import { Flex } from "rebass";
 import NextIcon from "../static/next.svg";
 
-const NextPrevPost = ({ title, path, position }) => {
+const NextPrevPost = ({ title, slug, position }) => {
   const isNext = position === "next";
   return (
     <>
       <Link
-        href={path}
+        href={slug}
         sx={{
           textAlign: isNext ? "right" : "left",
           gridColumn: isNext && "2/2"
@@ -36,7 +36,7 @@ const NextPrevPost = ({ title, path, position }) => {
 
 NextPrevPost.propTypes = {
   title: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
+  slug: PropTypes.string,
   position: PropTypes.oneOf(["next", "previous"])
 };
 

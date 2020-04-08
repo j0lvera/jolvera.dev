@@ -1,36 +1,19 @@
-import { withRouter } from "next/router";
-import BlogPost from "../../components/layouts/blog-post";
-import Changelog from "../../components/changelog";
+---
+published: true
+title: 'Deploy a Python serverless function on ZEIT Now'
+excerpt: "Let's write an API endpoint using a Python serverless function that will give us DNS records in JSON format from a given domain."
+date: '2020-03-16T05:35:07.322Z'
+status: 'In Progress'
+author:
+  name: 'Juan Olvera'
+  picture: '/assets/blog/authors/tim.jpeg'
+ogImage:
+  url: '/static/deploy-python-on-now.jpeg'
+changeLog:
+  2019-09-19: 'First draft'
+---
 
-export const meta = {
-  published: true,
-  publishedAt: "2019-09-23",
-  title: 'Deploy a Python serverless function on ZEIT Now',
-  summary:
-    "Let's write an API endpoint using a Python serverless function that will give us DNS records in JSON format from a given domain.",
-  image: "/static/deploy-python-on-now.jpeg",
-  status: "In Progress",
-  changelog: [
-    [
-      "2019-09-19",
-      "First draft",
-    ],
-    [
-        "2019-09-23",
-        "Add video and screenshots"
-    ]
-  ]
-};
-
-export default withRouter(props => {
-  return (
-    <BlogPost path={props.router.pathname} meta={meta}>
-      {props.children}
-    </BlogPost>
-  );
-});
-
-Let's write an API endpoint using a Python serverless function that will give us DNS records in JSON format from a given domain. We will send a GET request with a query parameter named "domain", i.e., 
+Let's write an API endpoint using a Python serverless function that will give us DNS records in JSON format from a given domain. We will send a GET request with a query parameter named "domain", i.e.,
 
 `GET https://localhost:3000/api?domain="jolvera.dev"`
 

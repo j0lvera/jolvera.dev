@@ -116,7 +116,7 @@ This feature was easy. I followed Max&#8217;s lead in using the [JSON feed spec]
 
 I still haven&#8217;t figure out how to create the JSON file on build time, so, for now, I&#8217;m running the node script before committing changes to generate the feed and routing it as a static file.
 
-An npm script runs a [Node function](https://github.com/j0lv3r4/jolvera.dev/blob/master/posts/rss-feed.js) that generates the feed as a static file when it&#8217;s deploying in Now.
+An npm script runs a [Node function](https://github.com/j0lv3r4/jolvera.dev/blob/master/posts/json-feed.js) that generates the feed as a static file when it&#8217;s deploying in Now.
 
 ```js{6,7}
 // package.json
@@ -124,7 +124,7 @@ An npm script runs a [Node function](https://github.com/j0lv3r4/jolvera.dev/blob
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "build:rss": "node ./.next/serverless/posts/rss-feed.js",
+    "build:rss": "node ./.next/serverless/posts/json-feed.js",
     "now-build": "next build && yarn build:rss",
     "start": "next start",
     "test": "jest"

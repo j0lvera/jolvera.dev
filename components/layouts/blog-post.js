@@ -3,11 +3,9 @@ import Link from "../link";
 import { Box, Flex } from "rebass";
 import { siteMeta } from "../../blog.config";
 import Layout from "./default";
-// import PublishedAt from "../utils/published-at";
+import PublishedAt from "../utils/published-at";
 import NextPrevPost from "../next-prev-post";
-// import WebMentions from "../webmentions";
-// import Status from "../status";
-// import Changelog from "../changelog";
+import Status from "../status";
 
 function BlogPost({
   content,
@@ -26,12 +24,12 @@ function BlogPost({
           <Styled.h1 className="p-name">{title}</Styled.h1>
 
           <Flex flexDirection={["column", "row"]}>
-            {/*<PublishedAt date={date} link={slug} mr={3} />*/}
+            <PublishedAt date={date} link={slug} mr={3} />
 
             <Link href="/about" rel="author" className="p-author h-card" mr={3}>
               {siteMeta.author}
             </Link>
-            {/*<Status status={status} />*/}
+            <Status status={status} />
           </Flex>
         </Box>
         <div
@@ -47,14 +45,14 @@ function BlogPost({
                 gridTemplateColumns: "1fr 1fr"
               }}
             >
-              {prevPost && (
+              {prevPost.slug && (
                 <NextPrevPost
                   title={prevPost.title}
                   slug={prevPost.slug}
                   position="previous"
                 />
               )}
-              {nextPost && (
+              {nextPost.slug && (
                 <NextPrevPost
                   title={nextPost.title}
                   slug={nextPost.slug}

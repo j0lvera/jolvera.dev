@@ -6,16 +6,17 @@ import pagination from "pagination";
 import Layout from "../components/layouts/default";
 import Post from "../components/blog-index-item";
 import { siteMeta } from "../blog.config";
+import { useRouter } from "next/router";
 
-export default function BlogIndex({ page = 1, posts, pathname }) {
+export default function BlogIndex({ page = 1, posts }) {
+  const { query, pathname } = useRouter();
+  console.log("pathname", pathname, query);
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
     current: page,
     rowsPerPage: siteMeta.postsPerPage,
     totalResult: posts.length
   });
-
-  console.log("paginator", posts);
 
   const {
     previous,
@@ -32,7 +33,7 @@ export default function BlogIndex({ page = 1, posts, pathname }) {
         <Styled.h1>Blog</Styled.h1>
 
         <Text as="p">
-          Subscribe to the <RebassLink href="/feed.json">JSON feed.</RebassLink>
+          Subscribe to the <RebassLink href="/api/rss">RSS feed.</RebassLink>
         </Text>
       </Box>
 
@@ -60,19 +61,19 @@ export default function BlogIndex({ page = 1, posts, pathname }) {
       >
         {previous && (
           <li>
-            <Link href={`${pathname}/${previous}`}>Previous</Link>
+            <Link href={`/blog/${previous}`}>Previous</Link>
           </li>
         )}
         {range.map((page, index) => (
           <li key={index}>
-            <Link key={index} href={`${pathname}/${page}`}>
+            <Link key={index} href={`/blog/${page}`}>
               {page}
             </Link>
           </li>
         ))}
         {next && (
           <li>
-            <Link href={`${pathname}/${next}`}>Next</Link>
+            <Link href={`/blog/${next}`}>Next</Link>
           </li>
         )}
       </Flex>

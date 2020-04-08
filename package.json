@@ -38,6 +38,7 @@
     "remark-parse": "^8.0.0",
     "remark-rehype": "^6.0.0",
     "require-from-string": "^2.0.2",
+    "rss": "^1.2.2",
     "sanitize-html": "^1.20.1",
     "theme-ui": "^0.2.41",
     "unified": "^9.0.0",

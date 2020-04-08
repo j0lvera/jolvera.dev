@@ -19,8 +19,10 @@ export async function getStaticProps() {
     };
 }
 export async function getStaticPaths() {
+    const allPosts = getAllPosts();
+    const paths = allPosts.map((slug, index) => `/blog/${index + 1}`);
     return {
-        paths: ['/blog/1', '/blog/2', '/blog/3'],
+        paths,
         fallback: false,
     }
 }

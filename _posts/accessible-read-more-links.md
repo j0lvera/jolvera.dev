@@ -12,7 +12,9 @@ changeLog:
   2019-06-13: 'First draft'
 ---
 
-"Learn More" Links are part of a pattern we see in Blogs. The design has the title first, then a content excerpt and a text link that takes us to the post page with the full content.![Example of a Blog showing a Read more link](/static/read-more-link-example.png)
+"Learn More" Links are part of a pattern we see in Blogs. The design has the title first, then a content excerpt and a text link that takes us to the post page with the full content.
+
+![Example of a Blog showing a Read more link](/static/read-more-link-example.png)
 
 Blogs have an index page with a list of posts that makes it easier for the general public to choose what to read. This is simple enough the general public, but it gets complicated with people with disabilities. In this specific case, people that use screen readers.
 

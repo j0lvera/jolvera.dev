@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 
 export default function BlogIndex({ page = 1, posts }) {
   const { query, pathname } = useRouter();
-  console.log("pathname", pathname, query);
+
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
     current: page,

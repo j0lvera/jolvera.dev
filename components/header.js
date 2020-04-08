@@ -12,7 +12,6 @@ import theme from "../theme";
 function Header({ path, pageTitle, ogImage }) {
   const titleStyles = {
     color: "text",
-    // fontSize: 3,
     fontWeight: "bold",
     textDecoration: "none",
     "&:hover": {
@@ -30,7 +29,7 @@ function Header({ path, pageTitle, ogImage }) {
     <>
       <Head title={pageTitle} ogImage={ogImage} />
 
-      <Box as="header" py={[5]}>
+      <Box as="header" py={[4]}>
         <Container>
           <Flex flexDirection={["column", "row"]} alignItems="center">
             <Title />

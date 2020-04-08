@@ -3,10 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "build:rss": "node ./.next/serverless/posts/rss-feed.js",
-    "now-build": "next build && yarn build:rss",
     "start": "next start",
-    "test": "jest"
   },
   "dependencies": {
     "@emotion/core": "^10.0.17",

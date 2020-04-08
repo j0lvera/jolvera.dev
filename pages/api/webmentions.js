@@ -6,9 +6,7 @@ const API_URL = "https://webmention.io/api/mentions.jf2";
 
 export default async (req, res) => {
   res.setHeader("Cache-Control", "max-age=86400, s-maxage=86400");
-  const url = `${API_URL}?domain=${config.webMentionsIo.domain}&token=${
-    process.env.WEBMENTION_IO_TOKEN
-  }`;
+  const url = `${API_URL}?domain=${config.webMentionsIo.domain}&token=${process.env.WEBMENTION_IO_TOKEN}`;
 
   try {
     const response = await fetch(url);

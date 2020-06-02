@@ -12,7 +12,7 @@ function Footer() {
             <Link href="https://github.com/j0lv3r4/jolvera.dev">
               Website source code
             </Link>{" "}
-            · <Link href="/api/rss">RSS Feed</Link>
+            · <Link href="/feed.xml">RSS Feed</Link>
           </Text>
         </Box>
 

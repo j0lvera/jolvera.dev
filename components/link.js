@@ -3,7 +3,9 @@ import { Link as RebassLink } from "rebass";
 
 const Link = props => (
   <NextLink href={props.href}>
-    <RebassLink {...props}>{props.children}</RebassLink>
+    <RebassLink sx={{ color: "primary" }} {...props}>
+      {props.children}
+    </RebassLink>
   </NextLink>
 );
 

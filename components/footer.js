@@ -12,7 +12,10 @@ function Footer() {
             <Link href="https://github.com/j0lv3r4/jolvera.dev">
               Website source code
             </Link>{" "}
-            · <Link href="/feed.xml">RSS Feed</Link>
+            ·{" "}
+            <Link href="/feed.xml" sx={{ color: "primary" }}>
+              RSS feed
+            </Link>
           </Text>
         </Box>
 
@@ -21,7 +24,9 @@ function Footer() {
             CC BY-SA
           </Link>{" "}
           {new Date().getFullYear()}, Juan Olvera. Website built with{" "}
-          <Link href="https://nextjs.org">Next.js</Link>
+          <Link href="https://nextjs.org" sx={{ color: "primary" }}>
+            Next.js
+          </Link>
         </Text>
 
         <Flex mb={2}>

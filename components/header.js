@@ -41,13 +41,6 @@ function Header({ path, pageTitle, ogImage }) {
         styles={styles`
           body {
             margin: 0;
-            box-sizing: border-box;
-          }
-
-          *,
-          *:before,
-          *:after {
-            box-sizing: inherit;
           }
 
           [data-whatintent="mouse"] *:focus {

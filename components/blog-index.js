@@ -9,7 +9,7 @@ import { siteMeta } from "../blog.config";
 import { useRouter } from "next/router";
 
 export default function BlogIndex({ page = 1, posts }) {
-  const { query, pathname } = useRouter();
+  const { pathname } = useRouter();
 
   const paginator = new pagination.SearchPaginator({
     prelink: "/",

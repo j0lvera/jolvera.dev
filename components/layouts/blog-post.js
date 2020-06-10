@@ -24,9 +24,20 @@ function BlogPost({
           <Styled.h1 className="p-name">{title}</Styled.h1>
 
           <Flex flexDirection={["column", "row"]}>
-            <PublishedAt date={date} link={slug} mr={3} />
+            <PublishedAt
+              date={date}
+              link={slug}
+              mr={3}
+              sx={{ color: "text", textDecoration: "none" }}
+            />
 
-            <Link href="/about" rel="author" className="p-author h-card" mr={3}>
+            <Link
+              href="/about"
+              rel="author"
+              className="p-author h-card"
+              mr={3}
+              sx={{ color: "text", textDecoration: "none" }}
+            >
               {siteMeta.author}
             </Link>
             <Status status={status} />
@@ -42,7 +53,8 @@ function BlogPost({
             <Box
               sx={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr"
+                gridTemplateColumns: "1fr 1fr",
+                gridGap: "1rem"
               }}
             >
               {prevPost.slug && (

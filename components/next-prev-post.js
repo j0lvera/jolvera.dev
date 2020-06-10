@@ -1,23 +1,33 @@
 import PropTypes from "prop-types";
 import Link from "./link";
-import { Flex } from "rebass";
+import { Flex, Text } from "rebass";
 import NextIcon from "../static/next.svg";
 
 const NextPrevPost = ({ title, slug, position }) => {
   const isNext = position === "next";
   return (
-    <>
+    <Flex
+      sx={{
+        border: "1px solid #333",
+        padding: "1rem",
+        borderRadius: "5px",
+        justifyContent: isNext ? "flex-end" : "flex-start"
+      }}
+    >
       <Link
         href={slug}
         sx={{
-          textAlign: isNext ? "right" : "left",
-          gridColumn: isNext && "2/2"
+          gridColumn: isNext && "2/2",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: isNext ? "flex-end" : "flex-start",
+          textDecoration: "none"
         }}
       >
         <Flex
           as="small"
           alignItems="center"
-          justifyContent="flex-end"
+          color="text"
           flexDirection={!isNext && "row-reverse"}
           mb={2}
         >
@@ -28,9 +38,11 @@ const NextPrevPost = ({ title, slug, position }) => {
             <NextIcon style={{ transform: "rotate(180deg)" }} />
           )}
         </Flex>
-        {title}
+        <Text as={"small"} color="primary" sx={{ textDecoration: "underline" }}>
+          {title}
+        </Text>
       </Link>
-    </>
+    </Flex>
   );
 };
 

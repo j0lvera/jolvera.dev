@@ -1,7 +1,7 @@
 import { Box } from "rebass";
 
 const Container = ({ children }) => (
-  <Box maxWidth="42em" mx="auto" px={4}>
+  <Box maxWidth="40em" mx="auto" px={4}>
     {children}
   </Box>
 );

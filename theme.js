@@ -1,4 +1,4 @@
-import nightOwl from "@theme-ui/prism/presets/night-owl.json";
+import nightOwl from "@theme-ui/prism/presets/vs-dark.json";
 
 const heading = {
   color: "text",
@@ -12,7 +12,7 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body:
-      '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+      "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
     heading: "inherit",
     monospace: "Menlo, monospace"
   },
@@ -28,16 +28,12 @@ export default {
     heading: 1.125
   },
   colors: {
-    text: "#e9eaec",
-    background: "#193750",
-    primary: "#05E0E9",
-    // primary: "#d7ff27",
-    // primary: "#ffb701",
-    // secondary: "#90adc6",
+    text: "#abb2bf",
+    background: "#212529",
+    primary: "#77b6e7",
     secondary: "#d7ff27",
     highlight: "#ffb701",
     muted: "rgba(0,0,0,0.2)",
-    // highlight: "#05E0E9",
     accent: "#23e7a9",
     darken: "#63a5df",
     social: {
@@ -51,9 +47,7 @@ export default {
       light: {
         text: "#333652",
         background: "#e9eaec",
-        // primary: "#8e44ad",
         primary: "#2980b9",
-        // secondary: "#333652",
         secondary: "#27ae60",
         muted: "#f6f6f9",
         gray: "#555",
@@ -71,16 +65,9 @@ export default {
     }
   },
   variants: {
-    link: {
-      color: "primary"
-    },
-    webmentionsDark: {
-      backgroundColor: "black"
-    },
-    webmentionsLight: {
-      color: "background",
-      backgroundColor: "darkGray"
-    }
+    // link: {
+    //   color: "primary"
+    // }
   },
   buttons: {
     primary: {
@@ -111,13 +98,11 @@ export default {
       img: {
         maxWidth: "100%"
       },
-      a: {
-        color: "primary"
-      },
       pre: {
         padding: 3,
-        fontSize: 1,
+        fontSize: 0,
         overflowX: "auto",
+        borderLeft: "4px solid #333",
         ...nightOwl,
         ".mdx-marker": {
           backgroundColor: "rgba(255,255,255,0.1)",
@@ -132,6 +117,16 @@ export default {
       code: {
         fontFamily: "monospace",
         fontSize: "inherit"
+      },
+      article: {
+        header: {
+          a: {
+            color: "text"
+          }
+        },
+        a: {
+          color: "primary"
+        }
       }
     },
     h1: {

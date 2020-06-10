@@ -15,7 +15,9 @@ changeLog:
 
 Let's write an API endpoint using a Python serverless function that will give us DNS records in JSON format from a given domain. We will send a GET request with a query parameter named "domain", i.e.,
 
-`GET https://localhost:3000/api?domain="jolvera.dev"`
+```
+GET https://localhost:3000/api?domain="jolvera.dev"
+```
 
 The tools we are going to use are a ZEIT account, npm, now-cli and a browser. I will assume that you already have npm and a browser installed.
 

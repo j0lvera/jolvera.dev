@@ -11,15 +11,18 @@ const Post = ({ title, summary, date, path, status }) => {
           <Link
             href={`/posts/${path}`}
             tabIndex="0"
-            color="text"
-            sx={{ textDecoration: "none" }}
+            sx={{ textDecoration: "none", color: "#ddd" }}
           >
             {title}
           </Link>
         </Text>
 
         <Flex mt={2}>
-          <PublishedAt link={path} date={date} />
+          <PublishedAt
+            link={path}
+            date={date}
+            sx={{ textDecoration: "none", color: "text" }}
+          />
 
           <Status ml={3} status={status} />
         </Flex>

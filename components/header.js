@@ -29,7 +29,7 @@ function Header({ path, pageTitle, ogImage }) {
     <>
       <Head title={pageTitle} ogImage={ogImage} />
 
-      <Box as="header" py={[4]}>
+      <Box as="header" py={[4, 5]}>
         <Container>
           <Flex flexDirection={["column", "row"]} alignItems="center">
             <Title />

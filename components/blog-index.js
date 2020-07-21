@@ -30,15 +30,12 @@ export default function BlogIndex({ page = 1, posts }) {
   return (
     <Layout pageTitle="Blog" path={pathname}>
       <Box as="header" mb={4}>
-        <Styled.h1>Blog</Styled.h1>
-
-        <Text as="p">
-          Subscribe to the <RebassLink href="/api/rss">RSS feed.</RebassLink>
-        </Text>
+        <Styled.h1 mt={0}>Blog</Styled.h1>
       </Box>
 
       {posts
         .filter((_, index) => results.indexOf(index) > -1)
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
         .map((post, index) => (
           <Post
             key={index}

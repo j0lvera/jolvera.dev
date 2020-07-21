@@ -10,7 +10,8 @@ export default function BlogPage({ posts }) {
 
 export async function getStaticProps() {
     const allPosts = getAllPosts();
-    const postsData = allPosts.map(slug => ({ slug, ...getPostBySlug(slug) }));
+    const postsData = allPosts
+        .map(slug => ({ slug, ...getPostBySlug(slug) }))
 
     return {
         props: {

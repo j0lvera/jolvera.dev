@@ -11,11 +11,15 @@ import { useRouter } from "next/router";
 export default function BlogIndex({ page = 1, posts }) {
   const { pathname } = useRouter();
 
+  // We need to sort before paginating, otherwise we slice the array sorted incorrectly
+  // and then we sort each array independently.
+  const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
   const paginator = new pagination.SearchPaginator({
     prelink: "/",
     current: page,
     rowsPerPage: siteMeta.postsPerPage,
-    totalResult: posts.length
+    totalResult: sortedPosts.length
   });
 
   const {
@@ -25,6 +29,7 @@ export default function BlogIndex({ page = 1, posts }) {
     fromResult,
     toResult
   } = paginator.getPaginationData();
+
   const results = _range(fromResult - 1, toResult);
 
   return (
@@ -35,7 +40,6 @@ export default function BlogIndex({ page = 1, posts }) {
 
       {posts
         .filter((_, index) => results.indexOf(index) > -1)
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
         .map((post, index) => (
           <Post
             key={index}

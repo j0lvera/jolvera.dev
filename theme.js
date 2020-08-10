@@ -1,7 +1,7 @@
 import nightOwl from "@theme-ui/prism/presets/vs-dark.json";
 
 const heading = {
-  color: "text",
+  color: "#d1d5dd",
   fontFamily: "heading",
   lineHeight: "heading",
   fontWeight: "heading"
@@ -12,7 +12,7 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body:
-      '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif',
+      "system-ui,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif !important",
     heading: "inherit",
     monospace: "Menlo, monospace"
   },
@@ -29,6 +29,7 @@ export default {
   },
   colors: {
     text: "#abb2bf",
+    heading: heading.color,
     background: "#212529",
     primary: "#77b6e7",
     secondary: "#d7ff27",
@@ -96,7 +97,7 @@ export default {
       lineHeight: "body",
       fontWeight: "body",
       img: {
-        maxWidth: "100%"
+        width: "100%"
       },
       pre: {
         padding: 3,
@@ -120,8 +121,13 @@ export default {
       },
       article: {
         header: {
-          a: {
-            color: "text"
+          h2: {
+            a: {
+              color: "heading"
+            }
+          },
+          time: {
+            color: "#8d939d"
           }
         },
         a: {
@@ -131,7 +137,7 @@ export default {
     },
     h1: {
       ...heading,
-      fontSize: 5
+      fontSize: 4
     },
     h2: {
       ...heading,

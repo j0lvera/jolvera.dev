@@ -30,19 +30,21 @@ function Footer() {
         </Text>
 
         <Flex mb={2}>
-          <Link
-            href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/previous"
-            mr={2}
-          >
-            ←
-          </Link>
-          IndieWeb 🕸💍
-          <Link
-            href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/next"
-            ml={2}
-          >
-            →
-          </Link>
+          <small>
+            <Link
+              href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/previous"
+              mr={2}
+            >
+              ←
+            </Link>
+            IndieWeb 🕸💍
+            <Link
+              href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/next"
+              ml={2}
+            >
+              →
+            </Link>
+          </small>
         </Flex>
       </Container>
     </Box>

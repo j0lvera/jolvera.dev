@@ -27,6 +27,7 @@ const Home = ({ router }) => {
             fontSize={[3, 5]}
             fontWeight="bold"
             lineHeight="heading"
+            color="heading"
             mb={3}
           >
             I build inclusive, fast and responsive web experiences

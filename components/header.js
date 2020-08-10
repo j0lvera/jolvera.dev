@@ -1,7 +1,7 @@
 import "what-input";
 import PropTypes from "prop-types";
 import { Global, css as styles } from "@emotion/core";
-import { Flex, Box } from "rebass";
+import { Image, Flex, Box } from "rebass";
 import Head from "./head";
 import Nav from "./nav";
 import Link from "./link";
@@ -9,9 +9,10 @@ import Container from "./container";
 import { siteMeta } from "../blog.config";
 import theme from "../theme";
 
-function Header({ path, pageTitle, ogImage }) {
+function Header({ pageTitle, ogImage }) {
   const titleStyles = {
-    color: "text",
+    color: "heading",
+    fontSize: 3,
     fontWeight: "bold",
     textDecoration: "none",
     "&:hover": {
@@ -31,9 +32,20 @@ function Header({ path, pageTitle, ogImage }) {
 
       <Box as="header" py={[4, 5]}>
         <Container>
-          <Flex flexDirection={["column", "row"]} alignItems="center">
-            <Title />
-            <Nav mt={[2, 0]} />
+          <Flex alignItems="center">
+            <Link href="/" aria-label="Go back to home">
+              <a>
+                <Image
+                  src="/static/_jolvera.png"
+                  sx={{ maxWidth: "5rem" }}
+                  mr={4}
+                />
+              </a>
+            </Link>
+            <Flex flexDirection="column">
+              <Title />
+              <Nav mt={[3, 0]} />
+            </Flex>
           </Flex>
         </Container>
       </Box>
@@ -52,6 +64,7 @@ function Header({ path, pageTitle, ogImage }) {
             color: ${theme.colors.background} !important;
           }
 
+        .sr-only,
         .visuallyhidden { 
           position: absolute; 
           overflow: hidden; 

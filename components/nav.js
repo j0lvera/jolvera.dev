@@ -7,7 +7,7 @@ const Nav = props => {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <Box as="nav" ml={"auto"} {...props}>
+    <Box as="nav" {...props}>
       <Flex
         pl={0}
         ml={0}
@@ -19,7 +19,11 @@ const Nav = props => {
             "margin-left": "1rem"
           },
           a: {
-            textDecoration: "none"
+            textDecoration: "none",
+            textTransform: "uppercase",
+            fontSize: 1,
+            fontWeight: "bold",
+            letterSpacing: 1
           },
           "a:hover": {
             textDecoration: "underline"

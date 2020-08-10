@@ -1,5 +1,5 @@
 import Layout from "./default";
-import { Box, Heading } from "rebass";
+import { Box } from "rebass";
 import { Styled } from "theme-ui";
 
 function Page({ title, children }) {

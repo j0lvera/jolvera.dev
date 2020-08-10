@@ -11,7 +11,7 @@ const Post = ({ title, summary, date, path, status }) => {
           <Link
             href={`/posts/${path}`}
             tabIndex="0"
-            sx={{ textDecoration: "none", color: "#ddd" }}
+            sx={{ textDecoration: "none" }}
           >
             {title}
           </Link>
@@ -27,7 +27,6 @@ const Post = ({ title, summary, date, path, status }) => {
           <Status ml={3} status={status} />
         </Flex>
       </Box>
-      <div className="post-summary">{summary}</div>
     </Box>
   );
 };

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Link from "./link";
 import { Flex, Text } from "rebass";
-import NextIcon from "../static/next.svg";
+import NextIcon from "../public/static/next.svg";
 
 const NextPrevPost = ({ title, slug, position }) => {
   const isNext = position === "next";

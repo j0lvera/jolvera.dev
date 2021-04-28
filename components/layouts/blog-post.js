@@ -21,7 +21,9 @@ function BlogPost({
     <Layout pageTitle={title} ogImage={image}>
       <article className="h-entry">
         <Box as="header" mb={4}>
-          <Styled.h1 className="p-name">{title}</Styled.h1>
+          <Styled.h2 as="h1" className="p-name">
+            {title}
+          </Styled.h2>
 
           <Flex flexDirection={["column", "row"]}>
             <PublishedAt

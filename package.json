@@ -15,6 +15,7 @@
     "dashify": "^2.0.0",
     "date-fns": "^1.30.1",
     "emotion-theming": "^10.0.17",
+    "fathom-client": "^3.4.0",
     "global": "^4.4.0",
     "gray-matter": "^4.0.2",
     "human-date": "^1.4.0",

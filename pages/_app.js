@@ -1,21 +1,38 @@
-import React from "react";
-import App from "next/app";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+import * as Fathom from "fathom-client";
 import { ThemeProvider, Styled } from "theme-ui";
 
 import theme from "../theme";
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
+function App({ Component, pageProps }) {
+  const router = useRouter();
 
-    return (
-      <ThemeProvider theme={theme}>
-        <Styled.root>
-          <Component {...pageProps} />
-        </Styled.root>
-      </ThemeProvider>
-    );
-  }
+  useEffect(() => {
+    Fathom.load(process.env.FATHOM_TRACKING_CODE, {
+      includedDomains: ["jolvera.dev"]
+    });
+
+    function onRouteChangeComplete() {
+      Fathom.trackPageview();
+    }
+
+    // Record a pageview when route changes
+    router.events.on("routeChangeComplete", onRouteChangeComplete);
+
+    // Unassign event listener
+    return () => {
+      router.events.off("routeChangeComplete", onRouteChangeComplete);
+    };
+  }, []);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Styled.root>
+        <Component {...pageProps} />
+      </Styled.root>
+    </ThemeProvider>
+  );
 }
 
-export default MyApp;
+export default App;

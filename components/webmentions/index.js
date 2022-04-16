@@ -1,6 +1,5 @@
 // https://mxb.dev/blog/using-webmentions-on-static-sites/#webmentions
 import React, { useState, useEffect } from "react";
-import { Heading, Button, Text, Box } from "rebass";
 import { getWebMentions, sortWebMentions } from "./utils";
 import WebMention from "./webmention";
 import Link from "../link";
@@ -26,40 +25,35 @@ function WebMentions({ url }) {
   const sorted = sortWebMentions(webmentionsArr, `${postUrl}`);
 
   const Instructions = props => (
-    <Box {...props}>
-      <Text as="p">
+    <div {...props}>
+      <p>
         Tweets with a link to this post appear as{" "}
         <Link href="https://indieweb.org/Webmention" target="_blank">
           Webmentions.
         </Link>
-      </Text>
+      </p>
 
-      <Button
-        mt={2}
-        as="a"
+      <a
         href={`https://twitter.com/intent/tweet/?text=My reply for ${siteMeta.siteUrl}${url}/`}
         target="_blank"
-        fontSize={0}
       >
         Leave a comment
-      </Button>
-    </Box>
+      </a>
+    </div>
   );
 
   return (
-    <Box bg="muted" p={3} mt={4}>
-      <Heading as="h2" fontSize={2} my={0}>
-        Webmentions
-      </Heading>
+    <div>
+      <h2>Webmentions</h2>
 
       <Instructions mt={4} mb={1} />
 
-      <Box as="ul" ml={0} pl={0} listStyle="none">
+      <ul>
         {sorted.map(webmention => (
           <WebMention key={webmention["wm-id"]} webmention={webmention} />
         ))}
-      </Box>
-    </Box>
+      </ul>
+    </div>
   );
 }
 

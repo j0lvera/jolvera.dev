@@ -1,5 +1,3 @@
-import { Box, Flex, Text, Link as RebassLink } from "rebass";
-import { Styled } from "theme-ui";
 import _range from "lodash.range";
 import Link from "../components/link";
 import pagination from "pagination";
@@ -11,7 +9,7 @@ import { useRouter } from "next/router";
 export default function BlogIndex({ page = 1, posts }) {
   const { pathname } = useRouter();
 
-  // We need to sort before paginating, otherwise we slice the array sorted incorrectly
+  // We need to sort before paginating, otherwise we slice the array sorted incorrectly,
   // and then we sort each array independently.
   const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -34,9 +32,9 @@ export default function BlogIndex({ page = 1, posts }) {
 
   return (
     <Layout pageTitle="Blog" path={pathname}>
-      <Box as="header" mb={4}>
-        <Styled.h1 mt={0}>Blog</Styled.h1>
-      </Box>
+      <header>
+        <h1>Blog</h1>
+      </header>
 
       {posts
         .filter((_, index) => results.indexOf(index) > -1)
@@ -51,13 +49,9 @@ export default function BlogIndex({ page = 1, posts }) {
           />
         ))}
 
-      <Flex
-        as="ul"
-        pl={0}
-        ml={0}
-        sx={{
-          listStyle: "none",
-          "li:not(:first-of-type)": { marginLeft: "1em" }
+      <ul
+        style={{
+          listStyle: "none"
         }}
       >
         {previous && (
@@ -77,7 +71,7 @@ export default function BlogIndex({ page = 1, posts }) {
             <Link href={`/blog/${next}`}>Next</Link>
           </li>
         )}
-      </Flex>
+      </ul>
     </Layout>
   );
 }

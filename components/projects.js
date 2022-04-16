@@ -1,14 +1,11 @@
-import { Box, Text } from "rebass";
 import Link from "./link";
 
 const Project = ({ project }) => (
-  <Box my={4}>
+  <div>
     <Link href={project.link}>{project.name}</Link>
 
-    <Text as="p" mb={0}>
-      {project.description}
-    </Text>
-  </Box>
+    <p>{project.description}</p>
+  </div>
 );
 
 const Projects = ({ list }) =>

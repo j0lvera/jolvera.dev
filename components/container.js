@@ -1,9 +1,7 @@
-import { Box } from "rebass";
-
 const Container = ({ children }) => (
-  <Box maxWidth="40em" mx="auto" px={4}>
+  <div style={{ maxWidth: "40rem", marginLeft: "auto", marginRight: "auto" }}>
     {children}
-  </Box>
+  </div>
 );
 
 export default Container;

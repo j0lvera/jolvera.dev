@@ -1,13 +1,12 @@
-import { Flex, Box, Text } from "rebass";
 import Link from "./link";
 import Container from "./container";
 
 function Footer() {
   return (
-    <Box as="footer" py={5}>
+    <footer>
       <Container>
-        <Box mb={2}>
-          <Text as="p">
+        <div>
+          <p>
             <Link href="#top">Back to top</Link> ·{" "}
             <Link href="https://github.com/j0lv3r4/jolvera.dev">
               Website source code
@@ -16,10 +15,10 @@ function Footer() {
             <Link href="/feed.xml" sx={{ color: "primary" }}>
               RSS feed
             </Link>
-          </Text>
-        </Box>
+          </p>
+        </div>
 
-        <Text as="p" mb={2}>
+        <p>
           <Link href="https://creativecommons.org/licenses/by-sa/4.0/">
             CC BY-SA
           </Link>{" "}
@@ -27,9 +26,9 @@ function Footer() {
           <Link href="https://nextjs.org" sx={{ color: "primary" }}>
             Next.js
           </Link>
-        </Text>
+        </p>
 
-        <Flex mb={2}>
+        <div style={{ display: "flex" }}>
           <small>
             <Link
               href="https://xn--sr8hvo.ws/%F0%9F%8D%B5%F0%9F%90%94%F0%9F%95%96/previous"
@@ -45,9 +44,9 @@ function Footer() {
               →
             </Link>
           </small>
-        </Flex>
+        </div>
       </Container>
-    </Box>
+    </footer>
   );
 }
 

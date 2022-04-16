@@ -1,33 +1,25 @@
 import { Moon, Sun } from "react-feather";
-import { useColorMode } from "theme-ui";
-import { Box, Flex, Button } from "rebass";
 import Link from "./link";
 
 const Nav = props => {
-  const [colorMode, setColorMode] = useColorMode();
-
   return (
-    <Box as="nav" {...props}>
-      <Flex
-        pl={0}
-        ml={0}
-        mb={0}
-        as="ul"
-        sx={{
-          listStyle: "none",
-          "li:not(:first-of-type) a, li:not(:first-of-type) button": {
-            "margin-left": "1rem"
-          },
-          a: {
-            textDecoration: "none",
-            textTransform: "uppercase",
-            fontSize: 1,
-            fontWeight: "bold",
-            letterSpacing: 1
-          },
-          "a:hover": {
-            textDecoration: "underline"
-          }
+    <nav {...props}>
+      <ul
+        style={{
+          listStyle: "none"
+          // "li:not(:first-of-type) a, li:not(:first-of-type) button": {
+          //   "margin-left": "1rem"
+          // },
+          // a: {
+          //   textDecoration: "none",
+          //   textTransform: "uppercase",
+          //   fontSize: 1,
+          //   fontWeight: "bold",
+          //   letterSpacing: 1
+          // },
+          // "a:hover": {
+          //   textDecoration: "underline"
+          // }
         }}
       >
         <li>
@@ -39,23 +31,18 @@ const Nav = props => {
         </li>
 
         <li>
-          <Button
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            backgroundColor="transparent"
-            color="primary"
-            fontSize={1}
-            p={1}
-            onClick={e => {
-              setColorMode(colorMode === "light" ? "dark" : "light");
-            }}
+          <button
+            onClick={
+              () => console.log("theme")
+              // setColorMode(colorMode === "light" ? "dark" : "light")
+            }
           >
-            {colorMode === "light" ? <Moon /> : <Sun />}
-          </Button>
+            light
+            {/*{colorMode === "light" ? <Moon /> : <Sun />}*/}
+          </button>
         </li>
-      </Flex>
-    </Box>
+      </ul>
+    </nav>
   );
 };
 

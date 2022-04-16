@@ -1,6 +1,4 @@
-import { Styled } from "theme-ui";
 import Link from "../link";
-import { Box, Flex } from "rebass";
 import { siteMeta } from "../../blog.config";
 import Layout from "./default";
 import PublishedAt from "../utils/published-at";
@@ -20,10 +18,10 @@ function BlogPost({
   return (
     <Layout pageTitle={title} ogImage={image}>
       <article className="h-entry">
-        <Box as="header" mb={4}>
-          <Styled.h1 className="p-name">{title}</Styled.h1>
+        <header>
+          <h1>{title}</h1>
 
-          <Flex flexDirection={["column", "row"]}>
+          <div>
             <PublishedAt
               date={date}
               link={slug}
@@ -41,21 +39,21 @@ function BlogPost({
               {siteMeta.author}
             </Link>
             <Status status={status} />
-          </Flex>
-        </Box>
+          </div>
+        </header>
         <div
           className="e-content"
           dangerouslySetInnerHTML={{ __html: content }}
         />
 
-        <Box as="footer" my={4}>
+        <footer>
           {(prevPost || nextPost) && (
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gridGap: "1rem"
-              }}
+            <div
+              // sx={{
+              //   display: "grid",
+              //   gridTemplateColumns: "1fr 1fr",
+              //   gridGap: "1rem"
+              // }}
             >
               {prevPost.slug && (
                 <NextPrevPost
@@ -71,9 +69,9 @@ function BlogPost({
                   position="next"
                 />
               )}
-            </Box>
+            </div>
           )}
-        </Box>
+        </footer>
       </article>
     </Layout>
   );

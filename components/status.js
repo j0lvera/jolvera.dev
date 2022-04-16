@@ -1,5 +1,3 @@
-import { Text, Box } from "rebass";
-
 const Status = props => {
   const { status } = props;
   const colors = {
@@ -20,18 +18,9 @@ const Status = props => {
   };
 
   return (
-    <Text as="p" {...props}>
-      <Box
-        as="span"
-        p={1}
-        bg={colors[status]["bg"]}
-        color={colors[status]["fg"]}
-        fontSize={0}
-        sx={{ borderRadius: ".2em" }}
-      >
-        {status}
-      </Box>
-    </Text>
+    <p {...props}>
+      <span>{status}</span>
+    </p>
   );
 };
 export default Status;

@@ -2,7 +2,6 @@ import { FaTwitter } from "react-icons/fa";
 import dashify from "dashify";
 import hdate from "human-date";
 import Link from "../link";
-import { Flex, Text, Box, Image } from "rebass";
 
 const Twitter = props => (
   <Link {...props} href={props.url} color="twitter">
@@ -20,29 +19,27 @@ function WebMention({ webmention }) {
     : `https://api.adorable.io/avatars/285/${dashify(author.name)}`;
 
   return (
-    <Box
-      as="li"
-      my={4}
+    <li
       className="h-card"
-      sx={{
+      style={{
         display: "grid",
         gridTemplateColumns: "3em auto"
       }}
     >
       <Link href={author.url} mr={2} target="blank" rel="noopener noreferrer">
-        <Image
+        <img
           className={author.photo ? "u-photo" : ""}
           src={authorPhoto}
           alt={author.name}
           height="auto"
-          sx={{
+          style={{
             maxWidth: "45px",
             borderRadius: "50%"
           }}
         />
       </Link>
-      <Box>
-        <Flex alignItems="center">
+      <div>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <Link
             className="u-url"
             href={author.url}
@@ -64,27 +61,22 @@ function WebMention({ webmention }) {
               textDecoration: "none"
             }}
           >
-            <Text
-              as="time"
-              className="dt-published"
-              dateTime={published}
-              fontSize={0}
-            >
+            <time className="dt-published" dateTime={published}>
               {hdate.prettyPrint(published)}
-            </Text>
+            </time>
           </Link>
-        </Flex>
+        </div>
         {content && (
-          <Box className="p-content" mt={0} sx={{ a: { color: "primary" } }}>
+          <div className="p-content">
             {content.html ? (
               <div dangerouslySetInnerHTML={{ __html: content.html }} />
             ) : (
               content.text
             )}
-          </Box>
+          </div>
         )}
-      </Box>
-    </Box>
+      </div>
+    </li>
   );
 }
 

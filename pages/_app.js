@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as Fathom from "fathom-client";
-import { ThemeProvider, Styled } from "theme-ui";
-
-import theme from "../theme";
 
 function App({ Component, pageProps }) {
   const router = useRouter();
@@ -26,13 +23,7 @@ function App({ Component, pageProps }) {
     };
   }, []);
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Styled.root>
-        <Component {...pageProps} />
-      </Styled.root>
-    </ThemeProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default App;

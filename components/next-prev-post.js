@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import Link from "./link";
-import { Flex, Text } from "rebass";
-import NextIcon from '../public/static/next.svg';
+import NextIcon from "../public/static/next.svg";
 
 const NextPrevPost = ({ title, slug, position }) => {
   const isNext = position === "next";
   return (
-    <Flex
-      sx={{
+    <div
+      style={{
+        display: "flex",
         border: "1px solid #333",
         padding: "1rem",
         borderRadius: "5px",
@@ -24,12 +24,8 @@ const NextPrevPost = ({ title, slug, position }) => {
           textDecoration: "none"
         }}
       >
-        <Flex
-          as="small"
-          alignItems="center"
-          color="text"
-          flexDirection={!isNext && "row-reverse"}
-          mb={2}
+        <small
+        // flexDirection={!isNext && "row-reverse"}
         >
           Read {position} post{" "}
           {isNext ? (
@@ -37,12 +33,10 @@ const NextPrevPost = ({ title, slug, position }) => {
           ) : (
             <NextIcon style={{ transform: "rotate(180deg)" }} />
           )}
-        </Flex>
-        <Text as={"small"} color="primary" sx={{ textDecoration: "underline" }}>
-          {title}
-        </Text>
+        </small>
+        <small style={{ textDecoration: "underline" }}>{title}</small>
       </Link>
-    </Flex>
+    </div>
   );
 };
 

@@ -1,5 +1,4 @@
 import Link from "../link";
-import { Box, Flex, Image } from "rebass";
 import { siteMeta } from "../../blog.config";
 import Layout from "./default";
 import PublishedAt from "../utils/published-at";
@@ -7,28 +6,18 @@ import PublishedAt from "../utils/published-at";
 function Note({ path, meta, children }) {
   return (
     <Layout pageTitle={meta.title} ogImage={meta.image}>
-      <Flex
-        as="article"
-        className="h-entry"
-        bg="muted"
-        color="background"
-        flexDirection="column"
-        sx={{
-          borderRadius: 2
-        }}
-      >
-        <Flex p={3}>
-          <Image
+      <article className="h-entry" color="background">
+        <div>
+          <img
             src="/static/avatar.png"
             alt="Juan Olvera's Avatar"
-            width="3em"
-            height="3em"
-            sx={{
-              borderRadius: 1
+            style={{
+              width: "3rem",
+              height: "3rem"
             }}
           />
-          <Box ml={3}>
-            <Flex>
+          <div>
+            <div style={{ display: "flex" }}>
               <Link
                 href="/about"
                 rel="author"
@@ -39,22 +28,14 @@ function Note({ path, meta, children }) {
               </Link>
 
               <PublishedAt date={meta.publishedAt} link={path} mr={3} />
-            </Flex>
+            </div>
 
-            <Box className="p-name p-content">{children}</Box>
-          </Box>
-        </Flex>
+            <div className="p-name p-content">{children}</div>
+          </div>
+        </div>
 
-        <Box
-          as="footer"
-          bg="muted"
-          color="text"
-          p={3}
-          sx={{ borderBottomLeftRadius: 2, borderBottomRightRadius: 2 }}
-        >
-          Like, RT, Comment
-        </Box>
-      </Flex>
+        <footer>Like, RT, Comment</footer>
+      </article>
     </Layout>
   );
 }

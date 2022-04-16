@@ -1,16 +1,14 @@
 import Layout from "./default";
-import { Box } from "rebass";
-import { Styled } from "theme-ui";
 
 function Page({ title, children }) {
   return (
     <Layout pageTitle={title}>
-      <Box as="article">
-        <Box as="header" mb={4}>
-          <Styled.h1>{title}</Styled.h1>
-        </Box>
-        <Box>{children}</Box>
-      </Box>
+      <article>
+        <header>
+          <h1>{title}</h1>
+        </header>
+        <div>{children}</div>
+      </article>
     </Layout>
   );
 }

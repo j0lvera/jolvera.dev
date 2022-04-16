@@ -1,7 +1,5 @@
-import { Box, Text } from "rebass";
-
 const Changelog = ({ details }) => (
-  <Text as="details" fontFamily="monospace">
+  <details>
     <summary>
       <strong>Changelog</strong>
     </summary>
@@ -10,19 +8,17 @@ const Changelog = ({ details }) => (
       const key = detail[0];
       const changes = detail.slice(1);
       return (
-        <Box ml={0} mt={2} key={index}>
-          <Text as="p" mb={0}>
-            {key}:
-          </Text>
-          <Box as="ul" my={2}>
+        <div key={index}>
+          <p>{key}:</p>
+          <ul>
             {changes.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
-          </Box>
-        </Box>
+          </ul>
+        </div>
       );
     })}
-  </Text>
+  </details>
 );
 
 export default Changelog;

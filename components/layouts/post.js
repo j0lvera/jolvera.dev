@@ -1,11 +1,10 @@
 import Link from "../link";
 import { siteMeta } from "../../blog.config";
 import Layout from "./default";
-import PublishedAt from "../utils/published-at";
+import { PublishedAt, Status } from "../utils";
 import NextPrevPost from "../next-prev-post";
-import Status from "../status";
 
-function BlogPost({
+function Post({
   content,
   slug,
   title,
@@ -19,15 +18,12 @@ function BlogPost({
     <Layout pageTitle={title} ogImage={image}>
       <article className="h-entry">
         <header>
-          <h1>{title}</h1>
+          <h1 className="mt-2">{title}</h1>
 
           <div>
-            <PublishedAt
-              date={date}
-              link={slug}
-              mr={3}
-              sx={{ color: "text", textDecoration: "none" }}
-            />
+            <Link href={slug}>
+              <PublishedAt date={date} />
+            </Link>
 
             <Link
               href="/about"
@@ -48,13 +44,7 @@ function BlogPost({
 
         <footer>
           {(prevPost || nextPost) && (
-            <div
-              // sx={{
-              //   display: "grid",
-              //   gridTemplateColumns: "1fr 1fr",
-              //   gridGap: "1rem"
-              // }}
-            >
+            <div className="grid grid-cols-2 gap-1">
               {prevPost.slug && (
                 <NextPrevPost
                   title={prevPost.title}
@@ -77,4 +67,4 @@ function BlogPost({
   );
 }
 
-export default BlogPost;
+export default Post;

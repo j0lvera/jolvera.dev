@@ -1,9 +1,9 @@
-import Link from "./link";
-import Container from "./container";
+import Link from "../link";
+import Container from "../container";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="py-8">
       <Container>
         <div>
           <p>
@@ -50,4 +50,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export { Footer };

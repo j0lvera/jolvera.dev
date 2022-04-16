@@ -1,0 +1,36 @@
+@import "prism-themes/themes/prism-a11y-dark.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-whatintent="mouse"] *:focus {
+    outline: none;
+}
+
+/*[data-whatintent="keyboard"] *:focus {*/
+/*    background-color: orange;*/
+/*    color: blue !important;*/
+/*}*/
+
+.sr-only,
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.mdx-marker {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: block;
+    margin-left: -1em;
+    margin-right: -0.9em;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-left: 0.25em solid grey;
+}

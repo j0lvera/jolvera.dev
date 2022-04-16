@@ -1,7 +1,7 @@
 import React from "react";
 import NextHead from "next/head";
 import { string } from "prop-types";
-import { siteMeta } from "../blog.config";
+import { siteMeta } from "../../blog.config";
 
 const defaultDescription = siteMeta.description;
 const defaultOGURL = siteMeta.siteUrl;
@@ -64,18 +64,18 @@ const Head = props => (
       <script
         dangerouslySetInnerHTML={{
           __html: `
-(function(f, a, t, h, o, m){
-a[h]=a[h]||function(){
-    (a[h].q=a[h].q||[]).push(arguments)
-};
-o=f.createElement('script'),
-m=f.getElementsByTagName('script')[0];
-o.async=1; o.src=t; o.id='fathom-script';
-m.parentNode.insertBefore(o,m)
-})(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
-fathom('set', 'siteId', '${fathomId}');
-fathom('trackPageview');
-      `
+    (function(f, a, t, h, o, m){
+    a[h]=a[h]||function(){
+        (a[h].q=a[h].q||[]).push(arguments)
+    };
+    o=f.createElement('script'),
+    m=f.getElementsByTagName('script')[0];
+    o.async=1; o.src=t; o.id='fathom-script';
+    m.parentNode.insertBefore(o,m)
+    })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+    fathom('set', 'siteId', '${fathomId}');
+    fathom('trackPageview');
+          `
         }}
       />
     )}

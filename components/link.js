@@ -1,9 +1,11 @@
 import NextLink from "next/link";
 
-const Link = props => (
-  <NextLink href={props.href}>
-    <a {...props}>{props.children}</a>
-  </NextLink>
-);
+function Link(props) {
+  return (
+    <NextLink href={props.href}>
+      <a {...props}>{props.children}</a>
+    </NextLink>
+  );
+}
 
 export default Link;

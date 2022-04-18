@@ -59,7 +59,7 @@ function ListOfPosts({ page = 1, posts }) {
 
       <nav
         aria-label="Change page"
-        className="border-t border-gray-200 py-4 mt-8"
+        className="border-t light:border-gray-200 dark:border-gray-700 py-4 mt-8"
       >
         <ul className="list-none m-0 p-0 flex">
           {previous && (

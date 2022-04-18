@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import md2html from "../../lib/md2html";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
 import Post from "../../components/layouts/post";
+import { getPostBySlug, getAllPosts } from "../../lib/api";
 
 function PostPage({ post }) {
   const router = useRouter();

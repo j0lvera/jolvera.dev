@@ -18,9 +18,9 @@ function Post({
     <Layout pageTitle={title} ogImage={image}>
       <article className="h-entry">
         <header>
-          <h1 className="mt-2">{title}</h1>
+          <h1 className="mt-2 p-name">{title}</h1>
 
-          <div>
+          <div className="flex space-x-3">
             <Link href={slug}>
               <PublishedAt date={date} />
             </Link>
@@ -57,6 +57,7 @@ function Post({
                   title={nextPost.title}
                   slug={nextPost.slug}
                   position="next"
+                  clssName="text-right"
                 />
               )}
             </div>

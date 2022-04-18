@@ -1,4 +1,4 @@
-import { Moon, Sun } from "react-feather";
+import classNames from "classnames";
 import Link from "../link";
 
 const links = [
@@ -9,40 +9,38 @@ const links = [
   {
     path: "/blog",
     name: "Blog"
-  },
-  {
-    path: "/projects",
-    name: "Projects"
-  },
-  {
-    path: "/contact",
-    name: "Contact"
   }
+  // {
+  //   path: "/projects",
+  //   name: "Projects"
+  // },
+  // {
+  //   path: "/now",
+  //   name: "Now"
+  // }
+  // {
+  //   path: "/uses",
+  //   name: "Uses"
+  // }
+  // {
+  //   path: "/contact",
+  //   name: "Contact"
+  // }
 ];
 
 function Nav(props) {
+  const { className, ...rest } = props;
   return (
-    <nav {...props}>
-      <ul className={"list-none flex"}>
-        {links.map(({ path, name }, index) => (
-          <li key={index}>
-            <Link href={path}>{name}</Link>
-          </li>
-        ))}
-
-        <li>
-          <button
-            className={"bg-amber-200 text-black"}
-            onClick={
-              () => console.log("theme")
-              // setColorMode(colorMode === "light" ? "dark" : "light")
-            }
-          >
-            light
-            {/*{colorMode === "light" ? <Moon /> : <Sun />}*/}
-          </button>
-        </li>
-      </ul>
+    <nav className={classNames("flex space-x-4", className)}>
+      {links.map(({ path, name }, index) => (
+        <Link
+          href={path}
+          className="no-underline hover:underline uppercase"
+          key={index}
+        >
+          {name}
+        </Link>
+      ))}
     </nav>
   );
 }

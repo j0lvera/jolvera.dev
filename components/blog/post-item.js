@@ -28,10 +28,10 @@ function Post({ title, excerpt, date, path, status }) {
           </Link>
         </h2>
 
-        <div className="flex">
+        <div className="flex space-x-3">
           <Link
             href={`/posts/${path}`}
-            className="u-url no-underline mr-2 text-gray-500"
+            className="u-url no-underline text-gray-500 dark:text-gray-400"
           >
             <PublishedAt date={date} />
           </Link>

@@ -1,6 +1,16 @@
-function Container({ children }) {
+import classNames from "classnames";
+
+function Container(props) {
+  const { className, children, ...rest } = props;
   return (
-    <div className={"lg:max-w-1xl mx-auto prose prose-base"}>{children}</div>
+    <div
+      className={classNames(
+        "w-full lg:max-w-1xl mx-auto prose dark:prose-invert prose-base",
+        className
+      )}
+    >
+      {children}
+    </div>
   );
 }
 

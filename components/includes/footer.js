@@ -1,15 +1,21 @@
+import classNames from "classnames";
 import Link from "../link";
 import Container from "../container";
 
-function Footer() {
+function Footer(props) {
+  const { className, ...rest } = props;
   return (
-    <footer className="py-8">
+    <footer className={classNames("py-8 dark:bg-slate-900", className)}>
       <Container>
         <div>
           <p>
             <Link href="#top">Back to top</Link> ·{" "}
             <Link href="https://github.com/j0lv3r4/jolvera.dev">
               Website source code
+            </Link>{" "}
+            ·{" "}
+            <Link href="https://app.usefathom.com/share/wyuxfmym/jolvera.dev">
+              Analytics
             </Link>{" "}
             ·{" "}
             <Link href="/feed.xml" sx={{ color: "primary" }}>

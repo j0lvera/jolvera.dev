@@ -10,7 +10,7 @@ function Header({ pageTitle, ogImage }) {
   return (
     <>
       <Head title={pageTitle} ogImage={ogImage} />
-      <header className="py-4">
+      <header className="py-8 dark:bg-slate-900">
         <Container>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link href="/" aria-label="Go to the home page">
@@ -20,8 +20,13 @@ function Header({ pageTitle, ogImage }) {
                 className="sr-only"
               />
             </Link>
-            <div className={"w-full flex justify-between"}>
-              <Link href="/" name="top" rel="me">
+            <div className="w-full flex flex-col md:flex-row items-center md:justify-between">
+              <Link
+                href="/"
+                name="top"
+                rel="me"
+                className="no-underline my-2 text-xl font-bold"
+              >
                 {siteMeta.title}
               </Link>
               <Nav />
